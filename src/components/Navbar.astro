@@ -1,0 +1,90 @@
+---
+type Props = {
+
+}
+
+const {} = Astro.props
+
+---
+<nav class="navbar">
+    <div class="container"> 
+        <a class="logo">alespi.dev</a>
+        <ul class="nav-links"">
+            <li><a href="#">sobre mi</a></li>
+            <li><a href="#">experiencia</a></li>
+            <li><a href="#">educacion</a></li>
+            <li><a href="#">habilidades</a></li>
+            <li><a href="#">proyectos</a></li>
+            <li><a href="#">contacto</a></li>
+        </ul>
+    </div>    
+</nav>
+
+<style>
+ navbar{
+ background-color: rgba(0, 0, 0, 0.5);
+ width:100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+/* a{
+    color:#B8EC4C;
+    font-family:'Poppins';
+    font-size:50px;
+    margin-left:50px;
+} */
+.logo {
+    color:#B8EC4C;
+    font-family: "Poppins", sans-serif;
+    font-weight:800;
+    font-size:50px;
+    text-decoration: none;
+    margin-left:200px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  color:#B8EC4C;
+  margin-left:200px;
+  align-items:center;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #B8EC4C;
+  font-family: 'Poppins', sans-serif;
+  font-weight:500;
+  font-size: 20px;
+  position: relative;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Altura de la línea */
+  background-color: #B8EC4C; /* Color de la línea */
+  bottom: -3px; /* Distancia entre el texto y la línea */
+  left: 0;
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+.nav-links li a:hover::after {
+  width: 0; /* Ocultar la línea cuando se pasa el cursor */
+}
+
+.nav-links li a:hover {
+  color: #6F7465;
+  font-family: 'Poppins';
+  font-size: 20px;
+}
+
+
+</style>
