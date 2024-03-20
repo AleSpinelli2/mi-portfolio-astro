@@ -1,0 +1,71 @@
+---
+type Props = {};
+
+const {} = Astro.props;
+---
+
+
+  <div class="container">
+    <div class="seccion-titulo">
+        <span class="span"> <a>HOLA A TODOS</a><div class="linea"></div></span>
+      <h1 class="titulo">bienvenidos</h1>
+      <h1 class="subtitulo">a mi portfolio</h1>
+    </div>
+    <div class="perfil">
+        <img class="img-perfil" src="../img/FotoPerfil.png" alt="Foto de perfil"/>
+    </div>
+  </div>
+
+
+<style>
+  .container {
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: max-content;
+    margin-top: 75px;
+  }
+  .perfil{
+    margin-right:200px ;
+  }
+  .img-perfil{
+    width: 480px;
+    height: 530px;
+  }
+  .seccion-titulo {
+    display: grid;
+    align-items: start;
+    margin-left:200px ;
+  }
+  a{
+    font-family: "Poppins", serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #b8ec4c;
+    display: block;
+  }
+  h1.subtitulo {
+    display: block;
+    font-family: "Outfit", serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: #fcfcfc;
+    margin-left: 100px;
+    margin-top: 0rem;
+  }
+  h1.titulo {
+    font-family: "Outfit", serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: #b8ec4c;
+    display: block;
+    margin: 0rem;
+  }
+  .linea {
+  height: 2.5px; /* Altura de la línea */
+  width: 450px; /* Ancho de la línea */
+  background-color: #b8ec4c; /* Color de la línea */
+  margin-bottom: 5px; /* Márgenes superior e inferior para separarla de los elementos circundantes */
+}
+</style>
