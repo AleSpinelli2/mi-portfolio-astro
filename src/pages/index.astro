@@ -3,11 +3,20 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Banner from "../components/Banner.astro";
 import SobreMi from "../components/SobreMi.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Experiencia from "../components/Experiencia.astro";
 ---
 
 <Layout title="ALESPI.DEV">
-    <Banner/>
-	<SobreMi/>
+  <SectionContainer class="mi-clase" id="/#banner">
+    <Banner />
+  </SectionContainer>
+  <SectionContainer class="mi-clase" id="/#sobreMi">
+    <SobreMi />
+  </SectionContainer>
+  <SectionContainer>
+    <Experiencia/>
+  </SectionContainer>
 </Layout>
 
 <style is:global>
@@ -46,4 +55,35 @@ import SobreMi from "../components/SobreMi.astro";
     font-display: swap;
     font-weight: 400;
   }
+  @font-face {
+    font-family: "PlusJakartaSans";
+    src: url("/fonts/PlusJakartaSans-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "PlusJakartaSans";
+    src: url("/fonts/PlusJakartaSans-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+  }
+</style>
+<style>
+ 
 </style>

@@ -1,14 +1,135 @@
 ---
-type Props = {
-
-}
-
-const {} = Astro.props
 
 ---
+
 <div class="container">
+  <div class="contenido">
+    <div class="seccion-izquierda">
+      <div class="seccion-titulo">
+        <h1 class="subtitulo">PERSONALES/CARRERA</h1>
+        <h2 class="titulo">Experiencia</h2>
+      </div>
+      <div class="seccion-filtros">
+        <h1 class="filtros-texto">Carrera</h1>
+        <h1 class="filtros-texto">Personales</h1>
+      </div>
+    </div>
+    <div class="seccion-derecha">
+      <h2 class="detalles">Proyecto web "CINEPICO"</h2>
+      <p class="fecha">MAR 2023 - AGO 2023 · Full Time  </p>
+      <span class="badge"> Obligatorio</span>
+      <div class="linea"></div>
+      <p class="descripcion">Pagina web para reservas de un cine con múltiples necesidades, desarrollada en c#(.NET)
+        base de datos en SQL Server, utilizando Entity Framework.</p>
+    </div>
+  </div>
 </div>
 
 <style>
-
+  .container {
+    display: block;
+    width: 100%;
+    min-height: 200vh;
+    background-color: #1a1a1a;
+    padding-top: 150px;
+    box-sizing: border-box;
+  }
+  .contenido{
+    margin-top: 80px;
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    border-bottom: 1px solid #272829;
+  }
+  .seccion-izquierda {
+    display: grid;
+    align-items: start;
+    margin-left: 150px;
+    width: max-content;
+    justify-items: start;
+  }
+  .seccion-titulo {
+    display: grid;
+    align-items: start;
+    margin-left: 20px;
+    width: max-content;
+    justify-items: center;
+  }
+  .seccion-filtros {
+    display: grid;
+    width: max-content;
+    justify-items: start;
+    margin-top: 50px;
+    margin-left: 25px;
+  }
+  .subtitulo {
+    width: max-content;
+    height: max-content;
+    margin: 0;
+  }
+  .titulo {
+    width: max-content;
+    height: max-content;
+    margin: 0;
+  }
+  h1 {
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 5.5px;
+    color: #ffffff;
+  }
+  h2 {
+    font-family: "PlusJakartaSans", serif;
+    font-weight: 700;
+    font-size: 5rem;
+    color: #b8ec4c;
+  }
+  h2.detalles {
+    font-family: "PlusJakartaSans", serif;
+    font-weight: 500;
+    font-size: 2rem;
+    color: #b8ec4c;
+  }
+  h1.filtros-texto {
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: #b8ec4c;
+  }
+  p.fecha{
+    font-family: "Inter", serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  p.descripcion{
+    font-family: "Inter",serif;
+    font-weight: 400;
+    font-size: 25px;
+    color: #ffffff;
+   margin-right: 50px;
+  }
+  span.badge{
+    background-color: #f0fff4;
+  color: #2f855a; 
+  font-size: 0.75rem; 
+  font-weight: 500; 
+  margin-right: 0.5rem; 
+  padding-left: 0.625rem; 
+  padding-right: 0.625rem; 
+  padding-top: 0.125rem; 
+  padding-bottom: 0.125rem; 
+  border-radius: 0.25rem;
+  }
+  .linea{
+  height: 2.5px;
+  width: 100%; 
+  max-width: 700px; 
+  background-color: #b8ec4c;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  }
 </style>
