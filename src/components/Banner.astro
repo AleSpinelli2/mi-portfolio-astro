@@ -19,53 +19,90 @@ const {} = Astro.props;
 
 <style>
   .container {
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: max-content;
-    margin-top: 75px;
-  }
-  .perfil{
-    margin-right:200px ;
-  }
-  .img-perfil{
-    width: 480px;
-    height: 530px;
-  }
-  .seccion-titulo {
-    display: grid;
-    align-items: start;
-    margin-left:200px ;
-  }
-  a{
-    font-family: "Poppins", serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #b8ec4c;
-    display: block;
-  }
-  h1.subtitulo {
-    display: block;
-    font-family: "Outfit", serif;
-    font-size: 4rem;
-    font-weight: 300;
-    color: #fcfcfc;
-    margin-left: 100px;
-    margin-top: 0rem;
-  }
-  h1.titulo {
-    font-family: "Outfit", serif;
-    font-size: 4rem;
-    font-weight: 300;
-    color: #b8ec4c;
-    display: block;
-    margin: 0rem;
-  }
-  .linea {
-  height: 2.5px; /* Altura de la línea */
-  width: 450px; /* Ancho de la línea */
-  background-color: #b8ec4c; /* Color de la línea */
-  margin-bottom: 5px; /* Márgenes superior e inferior para separarla de los elementos circundantes */
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: max-content;
+  margin-top: 75px;
+  padding: 0 20px;
 }
+
+.perfil {
+  margin-right: 20px;
+}
+
+.img-perfil {
+  width: 100%; 
+  max-width: 480px; 
+  height: auto; 
+}
+
+.seccion-titulo {
+  display: grid;
+  align-items: start;
+  margin-left: 20px;
+}
+
+a {
+  font-family: "Poppins", serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #b8ec4c;
+  display: block;
+}
+
+h1.subtitulo {
+  display: block;
+  font-family: "Outfit", serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: #fcfcfc;
+  margin-left: 20px;
+  margin-top: 0rem;
+}
+
+h1.titulo {
+  font-family: "Outfit", serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: #b8ec4c;
+  display: block;
+  margin: 0rem;
+}
+
+.linea {
+  height: 2.5px;
+  width: 100%; 
+  max-width: 450px; 
+  background-color: #b8ec4c;
+  margin-bottom: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+    align-items: stretch; 
+    padding: 20px; 
+  }
+
+  .perfil {
+    margin-right: 0; 
+  }
+
+  .img-perfil {
+    max-width: 100%; 
+    height: auto; 
+  }
+
+  .seccion-titulo {
+    margin-left: 0; 
+  }
+
+  .linea {
+    margin-bottom: 10px;
+  }
+}
+
 </style>
