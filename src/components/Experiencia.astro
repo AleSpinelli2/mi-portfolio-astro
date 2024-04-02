@@ -1,5 +1,6 @@
 ---
-
+import ExperienciaCarrera from "./ExperienciaCarrera.astro";
+import ExperienciaPersonal from "./ExperienciaPersonal.astro";
 ---
 
 <div class="container">
@@ -10,44 +11,13 @@
         <h2 class="titulo">Experiencia</h2>
       </div>
       <div class="seccion-filtros">
-        <h1 class="filtros-texto">Carrera <i class="fa fa-angle-right" aria-hidden="true"></i></h1>
-        <h1 class="filtros-texto">Personales</h1>
+        <a class="filtros-texto" id="carrera">Carrera</a>
+        <a class="filtros-texto" id="personales">Personales</a>
       </div>
     </div>
-    <div class="seccion-derecha">
-      <div class="opcion1 proyectos">
-        <h2 class="detalles">Proyecto web "CINEPICO"</h2>
-        <p class="fecha">MAR 2023 - AGO 2023 · Full Time</p>
-        <span class="badge"> Obligatorio</span>
-        <div class="linea"></div>
-        <p class="descripcion">
-          Pagina web para reservas de un cine con múltiples necesidades,
-          desarrollada en c#(.NET) base de datos en SQL Server, utilizando
-          Entity Framework.
-        </p>
-      </div>
-      <div class="opcion1 proyectos">
-        <h2 class="detalles">Proyecto web "CINEPICO"</h2>
-        <p class="fecha">MAR 2023 - AGO 2023 · Full Time</p>
-        <span class="badge"> Obligatorio</span>
-        <div class="linea"></div>
-        <p class="descripcion">
-          Pagina web para reservas de un cine con múltiples necesidades,
-          desarrollada en c#(.NET) base de datos en SQL Server, utilizando
-          Entity Framework.
-        </p>
-      </div>
-      <div class="opcion1 proyectos">
-        <h2 class="detalles">Proyecto web "CINEPICO"</h2>
-        <p class="fecha">MAR 2023 - AGO 2023 · Full Time</p>
-        <span class="badge"> Obligatorio</span>
-        <div class="linea"></div>
-        <p class="descripcion">
-          Pagina web para reservas de un cine con múltiples necesidades,
-          desarrollada en c#(.NET) base de datos en SQL Server, utilizando
-          Entity Framework.
-        </p>
-      </div>
+    <div class="seccion-derecha" id="contenido-derecha">
+      <ExperienciaCarrera />
+      <ExperienciaPersonal />
     </div>
   </div>
 </div>
@@ -115,61 +85,65 @@
     font-size: 5rem;
     color: #b8ec4c;
   }
-  h2.detalles {
-    font-family: "PlusJakartaSans", serif;
-    font-weight: 500;
-    font-size: 2rem;
-    color: #b8ec4c;
-  }
-  h1.filtros-texto {
+
+  a.filtros-texto {
     font-family: "Inter", serif;
     font-weight: 500;
     font-size: 2.5rem;
     color: #b8ec4c;
+    transition: color 0.3s ease;
+    cursor: pointer;
   }
-  p.fecha {
-    font-family: "Inter", serif;
-    font-weight: 400;
-    font-size: 1rem;
-    color: #ffffff;
+  a.filtros-texto:hover {
+    color: #4f514e;
   }
-  p.descripcion {
-    font-family: "Inter", serif;
-    font-weight: 400;
-    font-size: 25px;
-    color: #ffffff;
-    margin-right: 50px;
-  }
-  span.badge {
-    background-color: #f0fff4;
-    color: #2f855a;
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-right: 0.5rem;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-top: 0.125rem;
-    padding-bottom: 0.125rem;
-    border-radius: 0.25rem;
-  }
-  .linea {
-    height: 2.5px;
-    width: 100%;
-    max-width: 700px;
-    background-color: #b8ec4c;
-    margin-bottom: 5px;
-    margin-top: 10px;
-  }
-  .icon {
-    width: 130px;
-    height: 130px;
-    fill: #1dc02a;
-  }
-  .proyectos {
-    margin-bottom: 30px;
+  h1.filtros-texto.selected {
+    color: #4f514e;
   }
 
   .mostrar {
     display: block;
   }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const carreraLink = document.getElementById("carrera");
+    const personalesLink = document.getElementById("personales");
+    const contenidoDerecha = document.getElementById("contenido-derecha");
+    
+
+    if (contenidoDerecha != null) {
+      console.log('contenidoDerecha:', contenidoDerecha);
+
+      // Función para mostrar el componente de carrera
+      function mostrarCarrera() {
+        contenidoDerecha.innerHTML = "";
+        const experienciaCarrera = document.createElement("ExperienciaCarrera");
+        contenidoDerecha.appendChild(experienciaCarrera);
+      }
+
+      // Función para mostrar el componente de personales
+      function mostrarPersonales() {
+        contenidoDerecha.innerHTML = "";
+        const experienciaPersonales = document.createElement(
+          "ExperienciaPersonal"
+        );
+        contenidoDerecha.appendChild(experienciaPersonales);
+      }
+
+      // Event listeners para los enlaces
+      carreraLink?.addEventListener("click", function () {
+        mostrarCarrera();
+      });
+
+      personalesLink?.addEventListener("click", function () {
+        mostrarPersonales();
+      });
+
+      // Mostrar componente de carrera por defecto
+      mostrarCarrera();
+    } else {
+      console.error("El elemento contenido-derecha no se encontró.");
+    }
+  });
+</script>
