@@ -1,0 +1,82 @@
+---
+const { href } = Astro.props;
+---
+
+
+  <div class="timeline">
+    <div class="event">
+      <div class="marker"></div>
+      <div class="relative pb-12 md:col-span-2">
+        <div class="">
+          <h3 class="titulo">Liceo Juan Lacaze</h3>
+          <h4 class="curso">Ciclo Basico</h4>
+          <time class="fecha">2016-2018</time>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="marker"></div>
+      <div class="relative pb-12 md:col-span-2">
+        <div class="sticky top-0">
+          <h3 class="titulo">Escuela Tecnica Juan Lacaze</h3>
+          <h4 class="curso">Bachillerato de Deporte y Recreaccion</h4>
+          <time class="fecha">2019-2021</time>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="marker"></div>
+      <div class="relative pb-12 md:col-span-2">
+        <div class="sticky top-0">
+          <h3 class="titulo">Enseñanza Tecnica Profesional CTC- Universidad CLAEH</h3>
+          <h4 class="curso">Analista Programador</h4>
+          <time class="fecha">2022-2024</time>
+        </div>
+      </div>
+    </div>
+  </div>
+<style>
+  .timeline {
+    position: relative;
+    margin-left: 2rem;
+    margin-top: 4rem;
+  }
+  .timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 4px;
+    height: 100%;
+    background-color: #ffffff;
+  }
+  .event {
+    position: relative;
+    margin-bottom: 4rem;
+    padding-left: 2rem;
+  }
+  .event .marker {
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+  h3.titulo{
+    color:#b8ec4c;
+    font-family: 'PlusJakartaSans',sans-serif;
+    font-weight: 500;
+  }
+  h4.curso{
+    color: #ffffff;
+    font-family: 'Inter',sans-serif;
+    font-weight: 400;
+  }
+  .fecha{
+    color: #b8ec4c;
+    font-family: 'Inter',sans-serif;
+    font-weight: 500;
+  }
+</style>

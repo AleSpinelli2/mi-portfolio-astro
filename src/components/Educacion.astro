@@ -1,0 +1,97 @@
+---
+import LineaTiempo from "./LineaTiempo.astro";
+---
+
+<div class="container">
+  <div class="contenido">
+    <div class="seccion-izquierda">
+      <div class="seccion-titulo">
+        <h1 class="subtitulo">ESTUDIO/CURSOS</h1>
+        <h2 class="titulo">Educación</h2>
+      </div>
+      <div class="seccion-linea">
+        <LineaTiempo />
+      </div>
+    </div>
+    <div class="seccion-derecha">
+      <p>
+        Mas de 2 años de experiencia aprendiendo diferentes tecnologías dentro
+        de la programación. Principalmente habilidades para la carrera de
+        Analista Programador.
+      </p>
+      <p>
+        Mas de 2 años de experiencia aprendiendo diferentes tecnologías dentro
+        de la programación. Principalmente habilidades para la carrera de
+        Analista Programador.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    display: block;
+    width: 100%;
+    min-height: 200vh;
+    background-color: #1a1a1a;
+    box-sizing: border-box;
+  }
+  .contenido {
+    display: grid;
+    padding-top: 150px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    border-bottom: 1px solid #272829;
+  }
+  .seccion-izquierda {
+    display: grid;
+    align-items: start;
+    margin-left: 150px;
+    width: max-content;
+    min-width: 300px;
+    justify-items: start;
+  }
+  .seccion-derecha {
+    display: grid;
+    margin-top: 150px;
+    min-width: 300px;
+    justify-items: center;
+  }
+  .seccion-titulo {
+    display: grid;
+    align-items: start;
+    margin-left: 20px;
+    width: max-content;
+    justify-items: center;
+  }
+
+  .subtitulo {
+    width: max-content;
+    height: max-content;
+    margin: 0;
+  }
+  .titulo {
+    width: max-content;
+    height: max-content;
+    margin: 0;
+  }
+  h1 {
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 5.5px;
+    color: #ffffff;
+  }
+  h2 {
+    font-family: "PlusJakartaSans", serif;
+    font-weight: 700;
+    font-size: 5rem;
+    color: #b8ec4c;
+  }
+  p {
+    font-family: "Inter", serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: white;
+  }
+</style>

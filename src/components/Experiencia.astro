@@ -11,13 +11,17 @@ import ExperienciaPersonal from "./ExperienciaPersonal.astro";
         <h2 class="titulo">Experiencia</h2>
       </div>
       <div class="seccion-filtros">
-        <a class="filtros-texto" id="carrera">Carrera</a>
-        <a class="filtros-texto" id="personales">Personales</a>
+        <a class="filtros-texto" id="carrera-link">Carrera</a>
+        <a class="filtros-texto" id="personales-link">Personales</a>
       </div>
     </div>
     <div class="seccion-derecha" id="contenido-derecha">
-      <ExperienciaCarrera />
-      <ExperienciaPersonal />
+      <div id="experiencia-carrera" style="display: none;">
+        <ExperienciaCarrera />
+      </div>
+      <div id="experiencia-personal" style="display: none;">
+        <ExperienciaPersonal />
+      </div>
     </div>
   </div>
 </div>
@@ -26,15 +30,13 @@ import ExperienciaPersonal from "./ExperienciaPersonal.astro";
   .container {
     display: block;
     width: 100%;
-    min-height: 200vh;
+    min-height: auto;
     background-color: #1a1a1a;
     padding-top: 150px;
     box-sizing: border-box;
   }
   .contenido {
-    margin-top: 80px;
-    margin-bottom: 60px;
-    padding-bottom: 60px;
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
@@ -107,43 +109,33 @@ import ExperienciaPersonal from "./ExperienciaPersonal.astro";
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const carreraLink = document.getElementById("carrera");
-    const personalesLink = document.getElementById("personales");
-    const contenidoDerecha = document.getElementById("contenido-derecha");
-    
+    const carreraLink = document.getElementById("carrera-link");
+    const personalesLink = document.getElementById("personales-link");
+    const experienciaCarrera = document.getElementById("experiencia-carrera");
+    const experienciaPersonal = document.getElementById("experiencia-personal");
 
-    if (contenidoDerecha != null) {
-      console.log('contenidoDerecha:', contenidoDerecha);
-
-      // Función para mostrar el componente de carrera
+    if (
+      carreraLink &&
+      personalesLink &&
+      experienciaCarrera &&
+      experienciaPersonal
+    ) {
       function mostrarCarrera() {
-        contenidoDerecha.innerHTML = "";
-        const experienciaCarrera = document.createElement("ExperienciaCarrera");
-        contenidoDerecha.appendChild(experienciaCarrera);
+        experienciaCarrera!.style.display = "block";
+        experienciaPersonal!.style.display = "none";
       }
 
-      // Función para mostrar el componente de personales
       function mostrarPersonales() {
-        contenidoDerecha.innerHTML = "";
-        const experienciaPersonales = document.createElement(
-          "ExperienciaPersonal"
-        );
-        contenidoDerecha.appendChild(experienciaPersonales);
+        experienciaCarrera!.style.display = "none";
+        experienciaPersonal!.style.display = "block";
       }
 
-      // Event listeners para los enlaces
-      carreraLink?.addEventListener("click", function () {
-        mostrarCarrera();
-      });
+      carreraLink.addEventListener("click", mostrarCarrera);
+      personalesLink.addEventListener("click", mostrarPersonales);
 
-      personalesLink?.addEventListener("click", function () {
-        mostrarPersonales();
-      });
-
-      // Mostrar componente de carrera por defecto
       mostrarCarrera();
     } else {
-      console.error("El elemento contenido-derecha no se encontró.");
+      console.error("Alguno de los elementos no se encontró.");
     }
   });
 </script>
