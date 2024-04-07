@@ -3,7 +3,7 @@ import ExperienciaCarrera from "./ExperienciaCarrera.astro";
 import ExperienciaPersonal from "./ExperienciaPersonal.astro";
 ---
 
-<div class="container">
+
   <div class="contenido">
     <div class="seccion-izquierda">
       <div class="seccion-titulo">
@@ -24,89 +24,100 @@ import ExperienciaPersonal from "./ExperienciaPersonal.astro";
       </div>
     </div>
   </div>
-</div>
 
-<style>
-  .container {
-    display: block;
-    width: 100%;
-    min-height: auto;
-    background-color: #1a1a1a;
-    padding-top: 150px;
-    box-sizing: border-box;
+  <style>
+    .contenido {
+      display: grid;
+      width: 100%;
+      min-height: auto;
+      background-color: #1a1a1a;
+      padding-top: 150px;
+      box-sizing: border-box;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 40px;
+      border-bottom: 1px solid #272829;
   }
-  .contenido {
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    border-bottom: 1px solid #272829;
-  }
+  
   .seccion-izquierda {
-    display: grid;
-    align-items: start;
-    margin-left: 150px;
-    width: max-content;
-    min-width: 300px;
-    justify-items: start;
+      flex: 0 0 auto;
+      width: 300px;
+      background-color: #1a1a1a;
+      padding: 20px;
+      box-sizing: border-box;
   }
+  
+  .seccion-derecha {
+      flex: 1;
+      padding-left: 20px; 
+  }
+  
   .seccion-titulo {
-    display: grid;
-    align-items: start;
-    margin-left: 20px;
-    width: max-content;
-    justify-items: center;
+      display: grid;
+      align-items: start;
+      margin-left: 20px;
+      width: max-content;
+      justify-items: center;
   }
+  
   .seccion-filtros {
-    display: grid;
-    width: max-content;
-    justify-items: start;
-    margin-top: 50px;
-    margin-left: 25px;
+      display: grid;
+      width: max-content;
+      justify-items: start;
+      margin-top: 50px;
+      margin-left: 25px;
   }
+  
   .subtitulo {
-    width: max-content;
-    height: max-content;
-    margin: 0;
+      width: max-content;
+      height: max-content;
+      margin: 0;
   }
+  
   .titulo {
-    width: max-content;
-    height: max-content;
-    margin: 0;
+      width: max-content;
+      height: max-content;
+      margin: 0;
   }
+  
   h1 {
-    font-family: "Inter", serif;
-    font-weight: 500;
-    font-size: 1rem;
-    letter-spacing: 5.5px;
-    color: #ffffff;
+      font-family: "Inter", serif;
+      font-weight: 500;
+      font-size: 1.5rem; 
+      letter-spacing: 3px; 
+      color: #ffffff;
   }
+  
   h2 {
-    font-family: "PlusJakartaSans", serif;
-    font-weight: 700;
-    font-size: 5rem;
-    color: #b8ec4c;
+      font-family: "PlusJakartaSans", serif;
+      font-weight: 700;
+      font-size: 3rem; 
+      color: #b8ec4c;
   }
-
+  
   a.filtros-texto {
-    font-family: "Inter", serif;
-    font-weight: 500;
-    font-size: 2.5rem;
-    color: #b8ec4c;
-    transition: color 0.3s ease;
-    cursor: pointer;
+      font-family: "Inter", serif;
+      font-weight: 500;
+      font-size: 1.5rem; 
+      color: #b8ec4c;
+      transition: color 0.3s ease;
+      cursor: pointer;
   }
+  
   a.filtros-texto:hover {
-    color: #4f514e;
+      color: #4f514e;
   }
-  h1.filtros-texto.selected {
-    color: #4f514e;
-  }
-
+  
   .mostrar {
-    display: block;
+      display: block;
   }
-</style>
+  
+  @media (max-width: 768px) {
+      .contenido {
+          grid-template-columns: 1fr; 
+          padding-top: 100px; 
+      }
+  }
+  </style>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const carreraLink = document.getElementById("carrera-link");
