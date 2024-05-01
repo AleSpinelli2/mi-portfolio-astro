@@ -1,0 +1,83 @@
+---
+import SliderInfinito from "./SliderInfinito.astro";
+---
+
+<div class="container">
+  <div class="seccion-titulo">
+    <h1 class="subtitulo">LENGUAJES/HERRAMIENTAS</h1>
+    <h2 class="titulo">Habilidades</h2>
+  </div>
+
+  <div class="slider">
+    <SliderInfinito />
+  </div>
+</div>
+<style lang="scss">
+  .container {
+    display: inline-block;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #272829;
+    padding-bottom: 50px;
+  }
+
+  .seccion-titulo {
+      display: grid;
+      align-items: start;
+      margin-left: 20px;
+      width: max-content;
+      justify-items: center;
+  }
+  .subtitulo {
+      width: max-content;
+      height: max-content;
+      margin: 0;
+  }
+  
+  .titulo {
+      width: max-content;
+      height: max-content;
+      margin: 0;
+  } h1 {
+      font-family: "Inter", serif;
+      font-weight: 500;
+      font-size: 1.5rem; 
+      letter-spacing: 3px; 
+      color: #ffffff;
+  }
+  
+  h2 {
+      font-family: "PlusJakartaSans", serif;
+      font-weight: 700;
+      font-size: 3rem; 
+      color: #b8ec4c;
+  }
+  .slider {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .container {
+      padding-top: 100px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .container {
+      grid-template-columns: 1fr 2fr;
+      padding-top: 150px;
+    }
+
+    .seccion-titulo {
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+</style>

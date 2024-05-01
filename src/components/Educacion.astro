@@ -5,7 +5,7 @@ import LineaTiempo from "./LineaTiempo.astro";
 <div class="contenido">
   <div class="seccion-izquierda">
     <div class="seccion-titulo">
-      <h1 class="subtitulo">ESTUDIO/CURSOS</h1>
+      <h1 class="subtitulo">ESTUDIOS/CURSOS</h1>
       <h2 class="titulo">Educación</h2>
     </div>
     <div class="seccion-linea">
@@ -25,7 +25,7 @@ import LineaTiempo from "./LineaTiempo.astro";
   .contenido {
     display: grid;
     width: 100%;
-    min-height: auto; /* Cambiado a auto para adaptarse mejor a diferentes tamaños de pantalla */
+    min-height: auto; 
     background-color: #1a1a1a;
     box-sizing: border-box;
     padding-top: 150px;
@@ -36,60 +36,62 @@ import LineaTiempo from "./LineaTiempo.astro";
   .seccion-izquierda {
     display: grid;
     align-items: start;
-    margin-left: 10px; /* Ajuste para un mejor espacio en pantallas pequeñas */
-    width: 100%; /* Ajuste para ocupar el ancho completo en pantallas pequeñas */
+    margin-left: 50px; 
+    width: 100%; 
     justify-items: start;
   }
   .seccion-derecha {
     display: grid;
-    margin-top: 20px; /* Ajuste para un mejor espacio en pantallas pequeñas */
-    width: 100%; /* Ajuste para ocupar el ancho completo en pantallas pequeñas */
+    margin-top: 20px; 
+    width: 100%; 
     justify-items: center;
   }
   .seccion-titulo {
-    display: grid;
-    align-items: start;
-    margin-left: 10px; /* Ajuste para un mejor espacio en pantallas pequeñas */
-    width: 100%; /* Ajuste para ocupar el ancho completo en pantallas pequeñas */
-    justify-items: center;
+      display: grid;
+      align-items: start;
+      margin-left: 20px;
+      width: max-content;
+      justify-items: center;
   }
-
+  
+  
   .subtitulo {
-    width: max-content;
-    height: max-content;
-    margin: 0;
+      width: max-content;
+      height: max-content;
+      margin: 0;
   }
+  
   .titulo {
-    width: max-content;
-    height: max-content;
-    margin: 0;
+      width: max-content;
+      height: max-content;
+      margin: 0;
   }
   h1 {
     font-family: "Inter", serif;
     font-weight: 500;
-    font-size: 1.5rem; /* Ajuste para pantallas pequeñas */
-    letter-spacing: 2px; /* Ajuste para pantallas pequeñas */
+    font-size: 1.5rem; 
+    letter-spacing: 2px; 
     color: #ffffff;
   }
   h2 {
     font-family: "PlusJakartaSans", serif;
     font-weight: 700;
-    font-size: 3rem; /* Ajuste para pantallas pequeñas */
+    font-size: 3rem; 
     color: #b8ec4c;
   }
   p {
     font-family: "Inter", serif;
     font-weight: 400;
-    font-size: 1.2rem; /* Ajuste para pantallas pequeñas */
+    font-size: 1.2rem; 
     color: white;
-    text-align: justify; /* Ajuste para pantallas pequeñas */
-    padding: 0 20px; /* Ajuste para pantallas pequeñas */
+    text-align: justify; 
+    padding: 0 20px; 
   }
 
   @media screen and (max-width: 768px) {
     .contenido {
-      grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas más pequeñas */
-      padding-top: 100px; /* Ajuste de espacio superior */
+      grid-template-columns: 1fr; 
+      padding-top: 100px; 
     }
   }
 </style>
