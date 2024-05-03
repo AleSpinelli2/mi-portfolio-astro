@@ -1,0 +1,116 @@
+---
+import LineaTiempo from "./Timeline.astro";
+---
+
+<div class="contenido">
+  <div class="seccion-izquierda">
+    <div class="seccion-titulo">
+      <h1 class="subtitulo">ESTUDIOS/CURSOS</h1>
+      <h2 class="titulo">Educación</h2>
+    </div>
+    <div class="seccion-linea">
+      <LineaTiempo />
+    </div>
+  </div>
+  <div class="seccion-derecha">
+    <p>
+      Inicie mis estudios secundarios en el Liceo nº1 de Juan Lacaze, aprobando
+      ciclo basico y una vez terminado pase a la Escuela Tecnica, tambien de la
+      ciudad de Juan Lacazae a realizar Bachillerato de Deporte y Recreacion.
+    </p>
+    <p>
+      En el año 2022 inicie mi carrera como Analista Programador en el Instituto
+      Tecnologico CTC, alli desarrolle diferentes habilidades dentro de la
+      programacion aprendiendo diferentes lenguajes y tecnologias, llevando a
+      cabo diferentes proyectos desafiantes que me han permitido desarrollar
+      habilidades sólidas en programacion.
+    </p>
+  </div>
+</div>
+
+<style>
+  .contenido {
+    display: grid;
+    width: 100%;
+    min-height: auto;
+    background-color: #1a1a1a;
+    box-sizing: border-box;
+    padding-top: 150px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    border-bottom: 1px solid #272829;
+  }
+  .seccion-izquierda {
+    display: grid;
+    align-items: start;
+    margin-left: 50px;
+    width: 100%;
+    justify-items: start;
+  }
+  .seccion-derecha {
+    display: grid;
+    margin-right: 150px;
+    width: 100%;
+    justify-items: center;
+  }
+  .seccion-titulo {
+    display: grid;
+    align-items: start;
+    margin-left: 20px;
+    width: max-content;
+    justify-items: center;
+  }
+
+  .subtitulo {
+    width: max-content;
+    height: max-content;
+    margin: 0;
+  }
+
+  .titulo {
+    width: max-content;
+    height: max-content;
+    margin: 0;
+  }
+  h1 {
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #ffffff;
+  }
+  h2 {
+    font-family: "PlusJakartaSans", serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #b8ec4c;
+  }
+  p {
+    font-family: "Inter", serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: white;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    .contenido {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding-top: 100px;
+      margin: 0 20px;
+    }
+
+    .seccion-izquierda {
+      margin-left: 0;
+    }
+
+    .seccion-derecha {
+      margin-right: 0;
+    }
+  }
+</style>
