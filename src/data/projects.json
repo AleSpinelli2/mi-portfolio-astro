@@ -1,0 +1,40 @@
+{
+    "proyectos": [
+      {
+        "titulo": "Pagina web CineEpico",
+        "tipo": "Web",
+        "descripcion": "Pagina web para la compra de boletos de cine.",
+        "descripcion1": "El sistema permite ver catalogos de peliculas, reservas de manera segura y seleccionar horarios y asientos.",
+        "tecnologias": ["HTML", "CSS", "JavaScript","C#","Entity Framework"],
+        "links": [
+          {
+            "tipo": "Frontend",
+            "url": "https://github.com/ejemplo/proyecto1"
+          },
+          {
+            "tipo": "Sitio Web",
+            "url": "https://www.ejemplo.com/proyecto1"
+          }
+        ],
+        "imagen": "/public/iconos footer/Cinepico.webp"
+      },
+      {
+        "titulo": "Proyecto 2",
+        "tipo": "Mobile",
+        "descripcion": "Otro proyecto de ejemplo.",
+        "descripcion1": "Más detalles sobre este proyecto.",
+        "tecnologias": ["React Native", "Node.js"],
+        "links": [
+          {
+            "tipo": "GitHub",
+            "url": "https://github.com/ejemplo/proyecto2"
+          },
+          {
+            "tipo": "Sitio Web",
+            "url": "https://www.ejemplo.com/proyecto2"
+          }
+        ],
+        "imagen": "ruta/a/la/imagen2.jpg"
+      }
+    ]
+  }
