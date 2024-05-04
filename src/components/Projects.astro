@@ -1,10 +1,406 @@
 ---
 
-
 ---
-<div>
+
+<div class="contenido">
+  <div class="seccion-izquierda">
+    <div class="seccion-titulo">
+      <h1 class="subtitulo">FRONTEND/BACKEND/FULLSTACK</h1>
+      <h2 class="titulo">Proyectos</h2>
+    </div>
+    <div class="seccion-filtros">
+      <div _ngcontent-ng-c1445413196="" class="filters">
+        <p _ngcontent-ng-c1445413196="" class="">Todos</p><p
+          _ngcontent-ng-c1445413196=""
+          class="selected"
+        >
+          Full Stack
+        </p><p _ngcontent-ng-c1445413196="" class="">Frontend</p><p
+          _ngcontent-ng-c1445413196=""
+          class=""
+        >
+          Backend
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="seccion-derecha">
+    <div _ngcontent-ng-c1445413196="" class="project">
+      <div _ngcontent-ng-c1445413196="" class="info">
+        <header _ngcontent-ng-c1445413196="">
+          <h3 _ngcontent-ng-c1445413196="">FULL STACK</h3>
+        </header><div _ngcontent-ng-c1445413196="" class="text">
+          <h2 _ngcontent-ng-c1445413196="">Organizer</h2><p
+            _ngcontent-ng-c1445413196=""
+          >
+            Organizer es una aplicación de gestión y organización de tareas y
+            notas.
+          </p><p _ngcontent-ng-c1445413196="">
+            Te permite crear carpetas y notas personalizadas para organizarte de
+            manera eficiente.
+          </p>
+        </div><div _ngcontent-ng-c1445413196="" class="ancors">
+          <a
+            _ngcontent-ng-c1445413196=""
+            href=""
+            target="_blank"
+            class="mat-mdc-tooltip-trigger visit"
+            aria-describedby="cdk-describedby-message-ng-1-2"
+            cdk-describedby-host="ng-1"
+            ><img
+              _ngcontent-ng-c1445413196=""
+              src="/public/iconos footer/visit.svg"
+              alt="visit"
+              class="svg-visit"
+            /> Visitar
+          </a><a _ngcontent-ng-c1445413196="" href="" target="_blank"
+            ><img
+              _ngcontent-ng-c1445413196=""
+              src="/public/iconos footer/github.svg"
+              alt="github"
+              class="svg"
+            /> Frontend
+          </a><a _ngcontent-ng-c1445413196="" href="" target="_blank"
+            ><img
+              _ngcontent-ng-c1445413196=""
+              src="/public/iconos footer/github.svg"
+              alt="github"
+              class="svg"
+            /> Backend
+          </a><a _ngcontent-ng-c1445413196=""
+            ><img
+              _ngcontent-ng-c1445413196=""
+              src="/public/iconos footer/video.svg"
+              alt="play"
+              class="svg-video"
+            /> Video
+          </a>
+        </div><div _ngcontent-ng-c1445413196="" class="technologies">
+          <p _ngcontent-ng-c1445413196="">Angular</p><p
+            _ngcontent-ng-c1445413196=""
+          >
+            Java
+          </p><p _ngcontent-ng-c1445413196="">Spring Boot</p><p
+            _ngcontent-ng-c1445413196=""
+          >
+            Spring Security
+          </p><p _ngcontent-ng-c1445413196="">MySQL</p>
+        </div>
+      </div><div _ngcontent-ng-c1445413196="" class="cover">
+        <img
+          _ngcontent-ng-c1445413196=""
+          src="/public/img/Cinepico.webp"
+          class="img-cover"
+        />
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
+  .contenido {
+    display: inline-block;
+    width: 100%;
+    min-height: auto;
+    background-color: #1a1a1a;
+    padding-top: 50px;
+    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    border-bottom: 1px solid #272829;
+  }
 
+  .seccion-izquierda {
+    flex: 0 0 auto;
+    width: 300px;
+    background-color: #1a1a1a;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .seccion-derecha {
+    flex: 1;
+    padding-left: 20px;
+  }
+  .seccion-filtros {
+    display: grid;
+    width: max-content;
+    justify-items: start;
+    margin-top: 50px;
+    margin-left: 25px;
+  }
+
+  .seccion-titulo {
+    display: grid;
+    align-items: start;
+    margin-left: 20px;
+    width: max-content;
+    justify-items: center;
+  }
+
+  .subtitulo {
+    width: max-content;
+    height: max-content;
+    margin: 0;
+  }
+
+  .titulo {
+    width: max-content;
+    height: max-content;
+    margin: 0;
+  }
+
+  h1 {
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: #ffffff;
+  }
+
+  h2 {
+    font-family: "PlusJakartaSans", serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #b8ec4c;
+  }
+
+  a.filtros-texto {
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #b8ec4c;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+      .contenido {
+          grid-template-columns: 1fr; 
+          padding-top: 100px; 
+      }
+  }
+</style>
+<style ng-app-id="ng">
+  .projects-container[_ngcontent-ng-c1445413196] {
+    width: var(--container-size);
+  }
+
+  h2[_ngcontent-ng-c1445413196] {
+    font-size: 25px;
+    margin: 10px 0;
+  }
+
+  header[_ngcontent-ng-c1445413196] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  header[_ngcontent-ng-c1445413196] h3[_ngcontent-ng-c1445413196] {
+    color: #5a8bd5;
+  }
+
+  header[_ngcontent-ng-c1445413196] h3[_ngcontent-ng-c1445413196],
+  header[_ngcontent-ng-c1445413196] p[_ngcontent-ng-c1445413196] {
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .filters[_ngcontent-ng-c1445413196] {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+    background-color: #252627;
+    padding: 3.5px;
+    max-width: 400px;
+    border: 0.5px solid #424242;
+    gap: 5px;
+  }
+
+  .filters[_ngcontent-ng-c1445413196] p[_ngcontent-ng-c1445413196] {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    padding: 3.5px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #c0bdbd;
+    border: 0.5px solid transparent;
+  }
+
+  .filters[_ngcontent-ng-c1445413196] p[_ngcontent-ng-c1445413196]:hover {
+    color: #e7e2e2;
+  }
+
+  .filters[_ngcontent-ng-c1445413196] .selected[_ngcontent-ng-c1445413196] {
+    color: #e7e2e2;
+    background-color: #353535;
+    border: 0.5px solid #5f6061;
+  }
+
+  @media screen and (width <= 520px) {
+    .filters[_ngcontent-ng-c1445413196] {
+      gap: 0;
+    }
+
+    .filters[_ngcontent-ng-c1445413196] p[_ngcontent-ng-c1445413196] {
+      width: 100%;
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (width <= 340px) {
+    .filters[_ngcontent-ng-c1445413196] p[_ngcontent-ng-c1445413196] {
+      font-size: 9px;
+    }
+  }
+
+  .project[_ngcontent-ng-c1445413196] {
+    margin-top: 80px;
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .project[_ngcontent-ng-c1445413196]:nth-child(6) {
+    margin-bottom: 0;
+  }
+
+  .project[_ngcontent-ng-c1445413196]:nth-child(odd)
+    .info[_ngcontent-ng-c1445413196] {
+    order: 2;
+  }
+
+  .project[_ngcontent-ng-c1445413196]:nth-child(odd)
+    .cover[_ngcontent-ng-c1445413196] {
+    order: 1;
+  }
+
+  .img-cover[_ngcontent-ng-c1445413196] {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .cover[_ngcontent-ng-c1445413196] {
+    border-radius: 16px;
+    background-color: #dbe0e409;
+    height: fit-content;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .info[_ngcontent-ng-c1445413196] p[_ngcontent-ng-c1445413196] {
+    margin: 10px 0;
+  }
+
+  p[_ngcontent-ng-c1445413196] {
+    color: #c0bdbd;
+  }
+
+  #trello[_ngcontent-ng-c1445413196] {
+    opacity: 0.8;
+  }
+
+  .technologies[_ngcontent-ng-c1445413196] {
+    display: flex;
+    gap: 25px;
+    font-size: 11px;
+    margin: 10px 0 0;
+    background-color: #1c1d1d;
+    color: #bfbbbba6;
+    border-radius: 30px;
+    width: fit-content;
+    padding: 0 20px;
+    border: 1px solid #28292a;
+  }
+
+  .buttons[_ngcontent-ng-c1445413196],
+  .ancors[_ngcontent-ng-c1445413196] {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+  }
+
+  a[_ngcontent-ng-c1445413196] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-align: center;
+    width: 100px;
+    padding: 8px 0;
+    border-radius: 12px;
+    background-color: #272829;
+    font-size: 14px;
+    cursor: pointer;
+    color: #c7c7c7;
+    border: 0.5px solid #373839;
+    text-decoration: none;
+  }
+
+  .svg[_ngcontent-ng-c1445413196] {
+    opacity: 0.5;
+    height: 12px;
+    width: 12px;
+  }
+
+  .svg-visit[_ngcontent-ng-c1445413196] {
+    opacity: 0.5;
+    height: 15px;
+    width: 15px;
+  }
+
+  .svg-video[_ngcontent-ng-c1445413196] {
+    opacity: 0.5;
+    height: 15px;
+  }
+
+  a[_ngcontent-ng-c1445413196]:hover {
+    border: 0.5px solid #646669;
+  }
+
+  @media screen and (width <= 1100px) {
+    header[_ngcontent-ng-c1445413196] {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .ancors[_ngcontent-ng-c1445413196] {
+      flex-wrap: wrap;
+    }
+
+    .projects-container[_ngcontent-ng-c1445413196] {
+      width: 80%;
+    }
+
+    .project[_ngcontent-ng-c1445413196] {
+      grid-template-columns: repeat(1, 1fr);
+      margin-top: 50px;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+    }
+
+    .project[_ngcontent-ng-c1445413196] .info[_ngcontent-ng-c1445413196] {
+      order: 2;
+    }
+
+    .project[_ngcontent-ng-c1445413196] .cover[_ngcontent-ng-c1445413196] {
+      order: 1;
+    }
+  }
+
+  @media screen and (width <= 630px) {
+    .technologies[_ngcontent-ng-c1445413196] {
+      display: none;
+    }
+
+    .buttons[_ngcontent-ng-c1445413196] {
+      flex-wrap: wrap;
+    }
+  }
 </style>
