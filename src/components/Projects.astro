@@ -1,14 +1,12 @@
 ---
-
+import { proyectos } from "../data/projects.json";
 ---
 
 <div class="contenido">
   <div class="seccion-izquierda">
-    <div class="seccion-titulo">
+    <div class="seccion-filtros">
       <h1 class="subtitulo">FRONTEND/BACKEND/FULLSTACK</h1>
       <h2 class="titulo">Proyectos</h2>
-    </div>
-    <div class="seccion-filtros">
       <div _ngcontent-ng-c1445413196="" class="filters">
         <p _ngcontent-ng-c1445413196="" class="">Todos</p><p
           _ngcontent-ng-c1445413196=""
@@ -25,68 +23,55 @@
     </div>
   </div>
   <div class="seccion-derecha">
-    <div _ngcontent-ng-c1445413196="" class="project">
-      <div _ngcontent-ng-c1445413196="" class="info">
-        <header _ngcontent-ng-c1445413196="">
-          <h3 _ngcontent-ng-c1445413196="">FULL STACK</h3>
-        </header><div _ngcontent-ng-c1445413196="" class="text">
-          <h2 _ngcontent-ng-c1445413196="">Organizer</h2><p
-            _ngcontent-ng-c1445413196=""
-          >
-            Organizer es una aplicación de gestión y organización de tareas y
-            notas.
-          </p><p _ngcontent-ng-c1445413196="">
-            Te permite crear carpetas y notas personalizadas para organizarte de
-            manera eficiente.
-          </p>
-        </div><div _ngcontent-ng-c1445413196="" class="ancors">
-          <a
-            _ngcontent-ng-c1445413196=""
-            href=""
-            target="_blank"
-            class="mat-mdc-tooltip-trigger visit"
-            aria-describedby="cdk-describedby-message-ng-1-2"
-            cdk-describedby-host="ng-1"
-            ><img
+    {
+      proyectos.map((proyectos) => (
+        <div _ngcontent-ng-c1445413196="" class="project">
+          <div _ngcontent-ng-c1445413196="" class="info">
+            <>
+              <header _ngcontent-ng-c1445413196="">
+                <h3 _ngcontent-ng-c1445413196="">{proyectos.tipo}</h3>
+              </header>
+              <div _ngcontent-ng-c1445413196="" class="text">
+                <>
+                  <h2 _ngcontent-ng-c1445413196="">{proyectos.titulo}</h2>
+                  <p _ngcontent-ng-c1445413196="">{proyectos.descripcion}</p>
+                  <p _ngcontent-ng-c1445413196="">{proyectos.descripcion1}</p>
+                </>
+              </div>
+              <div _ngcontent-ng-c1445413196="" class="ancors">
+                {proyectos.links.map((link) => (
+                  <a
+                    _ngcontent-ng-c1445413196=""
+                    href={link.url}
+                    target="_blank"
+                  >
+                    <img
+                      _ngcontent-ng-c1445413196=""
+                      src="/public/iconos footer/github.svg"
+                      alt="github"
+                      class="svg"
+                    />
+                    {link.tipo}
+                  </a>
+                ))}
+              </div>
+              <div _ngcontent-ng-c1445413196="" class="technologies">
+                {proyectos.tecnologias.map((tecnologia) => (
+                  <p _ngcontent-ng-c1445413196="">{tecnologia}</p>
+                ))}
+              </div>
+            </>
+          </div>
+          <div _ngcontent-ng-c1445413196="" class="cover">
+            <img
               _ngcontent-ng-c1445413196=""
-              src="/public/iconos footer/visit.svg"
-              alt="visit"
-              class="svg-visit"
-            /> Visitar
-          </a><a _ngcontent-ng-c1445413196="" href="" target="_blank"
-            ><img
-              _ngcontent-ng-c1445413196=""
-              src="/public/iconos footer/github.svg"
-              alt="github"
-              class="svg"
-            /> Frontend
-          </a><a _ngcontent-ng-c1445413196="" href="" target="_blank"
-            ><img
-              _ngcontent-ng-c1445413196=""
-              src="/public/iconos footer/github.svg"
-              alt="github"
-              class="svg"
-            /> Backend
-          </a>
-        </div><div _ngcontent-ng-c1445413196="" class="technologies">
-          <p _ngcontent-ng-c1445413196="">Angular</p><p
-            _ngcontent-ng-c1445413196=""
-          >
-            Java
-          </p><p _ngcontent-ng-c1445413196="">Spring Boot</p><p
-            _ngcontent-ng-c1445413196=""
-          >
-            Spring Security
-          </p><p _ngcontent-ng-c1445413196="">MySQL</p>
+              src={proyectos.imagen}
+              class="img-cover"
+            />
+          </div>
         </div>
-      </div><div _ngcontent-ng-c1445413196="" class="cover">
-        <img
-          _ngcontent-ng-c1445413196=""
-          src="/public/img/Cinepico.webp"
-          class="img-cover"
-        />
-      </div>
-    </div>
+      ))
+    }
   </div>
 </div>
 
@@ -104,11 +89,8 @@
   }
 
   .seccion-izquierda {
-    flex: 0 0 auto;
-    width: 300px;
-    background-color: #1a1a1a;
-    padding: 20px;
-    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .seccion-derecha {
@@ -117,10 +99,11 @@
   }
   .seccion-filtros {
     display: grid;
+    margin-left: 50px;
+    align-items: start;
     width: max-content;
-    justify-items: start;
-    margin-top: 50px;
-    margin-left: 25px;
+    justify-items: center;
+    text-align: center;
   }
 
   .seccion-titulo {
@@ -167,10 +150,10 @@
     cursor: pointer;
   }
   @media (max-width: 768px) {
-      .contenido {
-          grid-template-columns: 1fr; 
-          padding-top: 100px; 
-      }
+    .contenido {
+      grid-template-columns: 1fr;
+      padding-top: 100px;
+    }
   }
 </style>
 <style ng-app-id="ng">
@@ -204,7 +187,8 @@
     justify-content: space-around;
     border-radius: 20px;
     background-color: #252627;
-    padding: 3.5px;
+    padding: 5px;
+    margin-top:20px;
     max-width: 400px;
     border: 0.5px solid #424242;
     gap: 5px;
@@ -212,7 +196,6 @@
 
   .filters[_ngcontent-ng-c1445413196] p[_ngcontent-ng-c1445413196] {
     font-size: 14px;
-    width: 100%;
     text-align: center;
     padding: 3.5px;
     border-radius: 20px;
@@ -249,8 +232,8 @@
   }
 
   .project[_ngcontent-ng-c1445413196] {
-    margin-top: 80px;
-    margin-bottom: 60px;
+    margin: 80px 80px;
+    
     padding-bottom: 60px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);

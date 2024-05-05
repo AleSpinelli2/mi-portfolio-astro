@@ -1,40 +1,54 @@
 {
     "proyectos": [
       {
-        "titulo": "Pagina web CineEpico",
-        "tipo": "Web",
+        "titulo": "CinÉpico",
+        "tipo": "Frontend",
         "descripcion": "Pagina web para la compra de boletos de cine.",
         "descripcion1": "El sistema permite ver catalogos de peliculas, reservas de manera segura y seleccionar horarios y asientos.",
         "tecnologias": ["HTML", "CSS", "JavaScript","C#","Entity Framework"],
         "links": [
           {
             "tipo": "Frontend",
-            "url": "https://github.com/ejemplo/proyecto1"
+            "url": "https://github.com/AleSpinelli2/Obligatorio2DDA.gits"
           },
           {
             "tipo": "Sitio Web",
             "url": "https://www.ejemplo.com/proyecto1"
           }
         ],
-        "imagen": "/public/iconos footer/Cinepico.webp"
+        "imagen": "/public/img/Cinepico.webp"
       },
       {
-        "titulo": "Proyecto 2",
-        "tipo": "Mobile",
-        "descripcion": "Otro proyecto de ejemplo.",
-        "descripcion1": "Más detalles sobre este proyecto.",
-        "tecnologias": ["React Native", "Node.js"],
+        "titulo": "Tricoma Elctro",
+        "tipo": "Fullstack",
+        "descripcion": "Ecommerce para venta de electrodomesticos.",
+        "descripcion1": "Aplicacion web para la gestion de una tienda de elctrodomesticos. Permite administrar, clientes, vendedores, productos y ventas .",
+        "tecnologias": ["React", "Next.js", "Spring boot","MySQL"],
         "links": [
           {
-            "tipo": "GitHub",
-            "url": "https://github.com/ejemplo/proyecto2"
+            "tipo": "Frontend",
+            "url": "https://github.com/GuyaSuna/FrontDDA.git"
           },
           {
-            "tipo": "Sitio Web",
-            "url": "https://www.ejemplo.com/proyecto2"
+            "tipo": "Backend",
+            "url": "https://github.com/AleSpinelli2/Obligatorio2DDA.git"
           }
         ],
-        "imagen": "ruta/a/la/imagen2.jpg"
+        "imagen": "/public/img/FrontendObl2DDA.webp"
+      },
+      {
+        "titulo": "Kayak Agency",
+        "tipo": "Frontend",
+        "descripcion": "Aplicacion web para publicar eventos y lugares para practicar kayak.",
+        "descripcion1": "El sistema permite gestionar lugares y crear eventos de kayak. .",
+        "tecnologias": ["React","AWS"],
+        "links": [
+          {
+            "tipo": "Frontend",
+            "url": "https://github.com/AlexSumner/TallerFrontEnd.git"
+          }
+        ],
+        "imagen":"/public/img/FrontendKayak.webp"
       }
     ]
   }
