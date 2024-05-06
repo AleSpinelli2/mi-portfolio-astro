@@ -1,24 +1,18 @@
 ---
+import react from '@astrojs/react'
+import useState from '@astrojs/react'
 import { proyectos } from "../data/projects.json";
 ---
-
 <div class="contenido">
   <div class="seccion-izquierda">
     <div class="seccion-filtros">
       <h1 class="subtitulo">FRONTEND/BACKEND/FULLSTACK</h1>
       <h2 class="titulo">Proyectos</h2>
       <div _ngcontent-ng-c1445413196="" class="filters">
-        <p _ngcontent-ng-c1445413196="" class="">Todos</p><p
-          _ngcontent-ng-c1445413196=""
-          class="selected"
-        >
-          Full Stack
-        </p><p _ngcontent-ng-c1445413196="" class="">Frontend</p><p
-          _ngcontent-ng-c1445413196=""
-          class=""
-        >
-          Backend
-        </p>
+        <p _ngcontent-ng-c1445413196="" class="">Todos</p>
+        <p _ngcontent-ng-c1445413196=""class="">Full Stack</p>
+        <p _ngcontent-ng-c1445413196="" class="">Frontend</p>
+        <p _ngcontent-ng-c1445413196="" class="">Backend</p>
       </div>
     </div>
   </div>
@@ -208,7 +202,7 @@ import { proyectos } from "../data/projects.json";
     color: #e7e2e2;
   }
 
-  .filters[_ngcontent-ng-c1445413196] .selected[_ngcontent-ng-c1445413196] {
+  .filters[_ngcontent-ng-c1445413196] :hover[_ngcontent-ng-c1445413196] {
     color: #e7e2e2;
     background-color: #353535;
     border: 0.5px solid #5f6061;
@@ -380,3 +374,5 @@ import { proyectos } from "../data/projects.json";
     }
   }
 </style>
+<script>
+</script>
