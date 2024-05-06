@@ -1,7 +1,7 @@
 ---
 import react from '@astrojs/react'
 import useState from '@astrojs/react'
-import { proyectos } from "../data/projects.json";
+import { proyectosJson } from "../data/projects.json";
 ---
 <div class="contenido">
   <div class="seccion-izquierda">
@@ -15,25 +15,26 @@ import { proyectos } from "../data/projects.json";
         <p _ngcontent-ng-c1445413196="" class="">Backend</p>
       </div>
     </div>
+   
   </div>
   <div class="seccion-derecha">
     {
-      proyectos.map((proyectos) => (
+      proyectosJson.map((proyectosJson) => (
         <div _ngcontent-ng-c1445413196="" class="project">
           <div _ngcontent-ng-c1445413196="" class="info">
             <>
               <header _ngcontent-ng-c1445413196="">
-                <h3 _ngcontent-ng-c1445413196="">{proyectos.tipo}</h3>
+                <h3 _ngcontent-ng-c1445413196="">{proyectosJson.tipo}</h3>
               </header>
               <div _ngcontent-ng-c1445413196="" class="text">
                 <>
-                  <h2 _ngcontent-ng-c1445413196="">{proyectos.titulo}</h2>
-                  <p _ngcontent-ng-c1445413196="">{proyectos.descripcion}</p>
-                  <p _ngcontent-ng-c1445413196="">{proyectos.descripcion1}</p>
+                  <h2 _ngcontent-ng-c1445413196="">{proyectosJson.titulo}</h2>
+                  <p _ngcontent-ng-c1445413196="">{proyectosJson.descripcion}</p>
+                  <p _ngcontent-ng-c1445413196="">{proyectosJson.descripcion1}</p>
                 </>
               </div>
               <div _ngcontent-ng-c1445413196="" class="ancors">
-                {proyectos.links.map((link) => (
+                {proyectosJson.links.map((link) => (
                   <a
                     _ngcontent-ng-c1445413196=""
                     href={link.url}
@@ -50,7 +51,7 @@ import { proyectos } from "../data/projects.json";
                 ))}
               </div>
               <div _ngcontent-ng-c1445413196="" class="technologies">
-                {proyectos.tecnologias.map((tecnologia) => (
+                {proyectosJson.tecnologias.map((tecnologia) => (
                   <p _ngcontent-ng-c1445413196="">{tecnologia}</p>
                 ))}
               </div>
@@ -59,7 +60,7 @@ import { proyectos } from "../data/projects.json";
           <div _ngcontent-ng-c1445413196="" class="cover">
             <img
               _ngcontent-ng-c1445413196=""
-              src={proyectos.imagen}
+              src={proyectosJson.imagen}
               class="img-cover"
             />
           </div>
@@ -207,7 +208,11 @@ import { proyectos } from "../data/projects.json";
     background-color: #353535;
     border: 0.5px solid #5f6061;
   }
-
+  .filters[_ngcontent-ng-c1445413196] .selected[_ngcontent-ng-c1445413196] {
+    color: #e7e2e2;
+    background-color: #353535;
+    border: 0.5px solid #5f6061;
+  }
   @media screen and (width <= 520px) {
     .filters[_ngcontent-ng-c1445413196] {
       gap: 0;
@@ -226,12 +231,13 @@ import { proyectos } from "../data/projects.json";
   }
 
   .project[_ngcontent-ng-c1445413196] {
-    margin: 80px 80px;
-    
+    margin-top: 80px;
+    margin-bottom: 60px;
     padding-bottom: 60px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
+    border-bottom: 1px solid #272829;
   }
 
   .project[_ngcontent-ng-c1445413196]:nth-child(6) {
@@ -374,5 +380,43 @@ import { proyectos } from "../data/projects.json";
     }
   }
 </style>
-<script>
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    // Almacenar todas las tarjetas originales
+    const allProjects = document.querySelectorAll(".project");
+
+    // Obtener referencia a los botones de filtro
+    const buttons = document.querySelectorAll(".filters p");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        // Eliminar la clase 'selected' de todos los botones de filtro
+        buttons.forEach((btn) => {
+          btn.classList.remove("selected");
+        });
+
+        // Agregar la clase 'selected' al botón de filtro seleccionado
+        event.target.classList.add("selected");
+
+        const filter = event.target.textContent.toLowerCase();
+
+        if (filter === "todos") {
+          // Mostrar todas las tarjetas originales
+          allProjects.forEach((project) => {
+            project.style.display = "flex";
+          });
+        } else {
+          // Filtrar y mostrar las tarjetas que coinciden con la categoría seleccionada
+          allProjects.forEach((project) => {
+            const category = project.querySelector("header h3").textContent.toLowerCase();
+            if (category === filter) {
+              project.style.display = "flex";
+            } else {
+              project.style.display = "none";
+            }
+          });
+        }
+      });
+    });
+  });
 </script>

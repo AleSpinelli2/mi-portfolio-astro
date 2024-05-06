@@ -1,5 +1,5 @@
 {
-    "proyectos": [
+    "proyectosJson": [
       {
         "titulo": "CinÉpico",
         "tipo": "Frontend",
@@ -20,7 +20,7 @@
       },
       {
         "titulo": "Tricoma Elctro",
-        "tipo": "Fullstack",
+        "tipo": "Full Stack",
         "descripcion": "Ecommerce para venta de electrodomesticos.",
         "descripcion1": "Aplicacion web para la gestion de una tienda de elctrodomesticos. Permite administrar, clientes, vendedores, productos y ventas .",
         "tecnologias": ["React", "Next.js", "Spring boot","MySQL"],
