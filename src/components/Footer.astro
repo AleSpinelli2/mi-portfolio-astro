@@ -22,123 +22,96 @@
 </footer>
 
 <style >
-    footer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        background-image: linear-gradient(to top, #000 75%, #1a1a1a);
-    }
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-image: linear-gradient(to top, #000 75%, #1a1a1a);
+  }
 
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 960px;
+    padding: 40px 0;
+  }
+
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    gap: 7px;
+  }
+
+  .footer-info p {
+    margin: 0;
+    color: #c7c5c580;
+  }
+
+  .footer-info .contact-email,
+  .ancors-container .redes {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    opacity: .7;
+    transition: transform .4s ease-out;
+  }
+
+  .footer-info .contact-email:hover,
+  .ancors-container .redes:hover {
+    transform: scale(1.04);
+    opacity: .8;
+  }
+
+  .footer-info .email-svg,
+  .svg {
+    height: 18px;
+    filter: grayscale(100%);
+  }
+
+  .ancors-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .ancors-container li {
+    transition: transform .3s ease;
+    opacity: .3;
+  }
+
+  .ancors-container li:hover {
+    transform: scale(1.1);
+    opacity: .5;
+  }
+
+  @media screen and (max-width: 900px) {
     .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        width: 960px;
-        padding: 40px 0
+      width: 500px;
     }
 
-    .footer-info {
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
-        justify-content: center;
-        gap: 7px
+    .ancors-container {
+      gap: 10px;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    .container {
+      width: 300px;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .footer-info p {
-        margin: 0
+    .container .footer-info {
+      align-items: center;
+      gap: 10px;
     }
-
-    .footer-info .contact-email {
-        color: #fff;
-        display: flex;
-        align-items: center;
-        gap: 3px;
-        opacity: .7;
-        transition: transform .4s ease-out
-    }
-
-    .footer-info .contact-email:hover {
-        transform: scale(1.04);
-        opacity: .8
-    }
-
-    .footer-info .email-svg {
-        height: 18px
-    }
-    .ancors-container .redes {
-        color: #fff;
-        display: flex;
-        align-items: center;
-        gap: 3px;
-        opacity: .7;
-        transition: transform .4s ease-out
-    }
-
-    .ancors-container .redes:hover {
-        transform: scale(1.04);
-        opacity: .8
-    }
-
-    ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 40px
-    }
-
-    li {
-        list-style-type: none
-    }
-
-    p {
-        color: #c7c5c580
-    }
-
-    a {
-        text-decoration: none
-    }
-
-    .ancors-container li {
-        transition: transform .3s ease;
-        opacity: .3
-    }
-
-    .ancors-container li:hover {
-        transform: scale(1.1);
-        opacity: .5
-    }
-
-    .svg {
-        height: 25px;
-        filter: grayscale(100%)
-    }
-
-    @media screen and (width <= 900px) {
-        .container {
-            width: 500px
-        }
-
-        .container ul {
-            gap: 20px
-        }
-    }
-
-    @media screen and (width <= 720px) {
-        .container {
-            width: 300px;
-            flex-direction: column;
-            gap: 10px
-        }
-
-        .container .footer-info {
-            align-items: center;
-            gap: 10px
-        }
-
-        .container ul {
-            padding: 0
-        }
-    }
+  }
 </style>
