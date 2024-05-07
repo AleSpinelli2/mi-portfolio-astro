@@ -1,0 +1,96 @@
+---
+
+---
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-dark">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<style>
+/* Modal Overlay */
+.modal {
+  display: none; /* Oculta el modal por defecto */
+  position: fixed; /* Posición fija para cubrir toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo semi-transparente */
+  z-index: 1000; /* Z-index alto para que esté por encima de otros elementos */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative; /* Posición relativa para alinear correctamente el contenido */
+  margin: auto; /* Centra el modal horizontalmente */
+  top: 50%; /* Desplaza el modal hacia arriba un 50% */
+  transform: translateY(-50%); /* Ajusta la posición vertical del modal */
+  width: 80%; /* Ancho del contenido del modal */
+  max-width: 600px; /* Ancho máximo del contenido del modal */
+  background-color: #fff; /* Color de fondo del modal */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex; /* Usa flexbox para alinear los elementos del header */
+  justify-content: space-between; /* Espacio entre los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+  padding-bottom: 10px; /* Espaciado inferior */
+  border-bottom: 1px solid #ccc; /* Línea divisoria inferior */
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 20px 0; /* Espaciado superior e inferior */
+}
+
+/* Modal Footer */
+.modal-footer {
+  display: flex; /* Usa flexbox para alinear los elementos del footer */
+  justify-content: flex-end; /* Alinea los elementos al final */
+  padding-top: 10px; /* Espaciado superior */
+  border-top: 1px solid #ccc; /* Línea divisoria superior */
+}
+
+/* Close Button */
+.btn-close {
+  background: none; /* Fondo transparente */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón por encima */
+  padding: 0; /* Sin relleno */
+  font-size: 20px; /* Tamaño de la fuente */
+}
+
+/* Close Button Icon */
+.btn-close span {
+  position: relative;
+  top: 2px; /* Ajusta la posición vertical */
+}
+</style>
+<script is:inline>
+    window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('openModalEvent', () => {
+    // Lógica para abrir el modal
+    const modal = document.getElementById('exampleModal');
+    console.log(modal);
+    modal.style.display = 'block';
+  });
+});
+
+  </script>

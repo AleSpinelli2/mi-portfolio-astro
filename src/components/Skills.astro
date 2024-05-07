@@ -3,69 +3,95 @@ import Slider from "./Slider.astro";
 ---
 
 <div class="container">
-  <div class="seccion-titulo">
-    <h1 class="subtitulo">LENGUAJES/HERRAMIENTAS</h1>
-    <h2 class="titulo">Habilidades</h2>
+  <div class="seccion-izquierda">
+    <div class="seccion-titulo">
+      <h1 class="subtitulo">LENGUAJES/APTITUDES</h1>
+      <h2 class="titulo">Habilidades</h2>
+    </div>
   </div>
-  <div class="slider">
-    <Slider />
-  </div>
+  
+    <div class="slider">
+      <Slider />
+    </div>
+  
 </div>
 <style lang="scss">
   .container {
-    display: inline-block;
-    width: 100%;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    background-color: #1a1a1a;
-    border-bottom: 2px solid #272829;
-    padding-bottom: 50px;
+  display: inherit;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  background-color: #1a1a1a;
+  border-bottom: 2px solid #272829;
+  padding-bottom: 50px;
+  padding-top: 80px;
+}
+
+.seccion-izquierda {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 50px;
   }
+
+  .seccion-derecha {
+    flex: 1;
+    padding-left: 20px;
+  }
+  .seccion-filtros {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 100%; 
+}
 
   .seccion-titulo {
-      display: grid;
-      align-items: start;
-      margin-left: 20px;
-      width: max-content;
-      justify-items: center;
-  }
-  .subtitulo {
-      width: max-content;
-      height: max-content;
-      margin: 0;
-  }
-  
-  .titulo {
-      width: max-content;
-      height: max-content;
-      margin: 0;
-  } h1 {
-      font-family: "Inter", serif;
-      font-weight: 500;
-      font-size: 1.5rem; 
-      letter-spacing: 3px; 
-      color: #ffffff;
-  }
-  
-  h2 {
-      font-family: "PlusJakartaSans", serif;
-      font-weight: 700;
-      font-size: 3rem; 
-      color: #b8ec4c;
-  }
-  .slider {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     align-items: center;
-    gap: 12px;
-    margin-top: 100px;
+    margin-left: 20px;
+    width: max-content;
+    justify-items: center;
+    text-align: center;
   }
 
-  @media screen and (min-width: 768px) {
-    .container {
-      padding-top: 50px;
+  .subtitulo, .titulo {
+  width: 100%; 
+  max-width: 100%;
+  height: auto; 
+  margin: 0;
+  text-align: center;
+}
+  h1 {
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #ffffff;
+  }
+
+  h2 {
+    font-family: "PlusJakartaSans", serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #b8ec4c;
+  }
+  .slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+    .contenido {
+      grid-template-columns: 1fr;
+      padding-top: 100px;
     }
+    .seccion-izquierda {
+    grid-template-columns: 1fr; 
+  }
   }
 
   @media screen and (min-width: 1024px) {

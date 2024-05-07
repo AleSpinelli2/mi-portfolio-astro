@@ -16,7 +16,7 @@
             "url": "https://www.ejemplo.com/proyecto1"
           }
         ],
-        "imagen": "/public/img/Cinepico.webp"
+        "imagen": "/img/Cinepico.webp"
       },
       {
         "titulo": "Tricoma Elctro",
@@ -34,7 +34,7 @@
             "url": "https://github.com/AleSpinelli2/Obligatorio2DDA.git"
           }
         ],
-        "imagen": "/public/img/FrontendObl2DDA.webp"
+        "imagen": "/img/FrontendObl2DDA.webp"
       },
       {
         "titulo": "Kayak Agency",
@@ -48,7 +48,7 @@
             "url": "https://github.com/AlexSumner/TallerFrontEnd.git"
           }
         ],
-        "imagen":"/public/img/FrontendKayak.webp"
+        "imagen":"/img/FrontendKayak.webp"
       }
     ]
   }

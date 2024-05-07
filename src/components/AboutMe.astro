@@ -1,36 +1,46 @@
 ---
-type Props = {};
-
-const {} = Astro.props;
+import Modal from "./Modal.astro"
 ---
 
 <div class="container">
   <div class="texto">
     <h1>Sobre Mí</h1>
     <p>
-      Mi nombre es Alejo, soy Uruguayo, Analista programador y actualmente me
-      encuentro en la etapa final de la carrera. Soy una persona proactiva que
+      Hola a todos! Mi nombre es Alejo Spinelli Analista programador de Uruguay, con 2 años de experiencia en el mundo de la programacion. Soy una persona proactiva que
       le gusta aprender nuevas habilidades y superarse constantemente.
     </p>
+  </div>
+  <div class="ver-mas">
+    <button
+      type="button"
+      class="btn"
+      onclick="openModal()"
+    >
+      VER MAS
+    </button>
   </div>
 </div>
 
 <style>
- .container {
+  .container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: #1A1A1A;
-    padding: 100px; 
-    box-sizing: border-box; 
+    background-color: #1a1a1a;
+    padding: 100px;
+    box-sizing: border-box;
     border-bottom: 1px solid #272829;
+  }
+  .ver-mas{
+    display: grid;
+    justify-content: end;
   }
   h1 {
     color: #e0e0e0;
     font-family: "Syne", serif;
     font-weight: 800;
     font-size: 3.5rem;
-    margin-left: 0; 
+    margin-left: 0;
     margin-bottom: 20px;
   }
   p {
@@ -38,17 +48,41 @@ const {} = Astro.props;
     font-family: "Syne", serif;
     font-weight: 400;
     font-size: 2.5rem;
-    margin-inline: 0; 
+    margin-inline: 0;
     margin-bottom: 20px;
   }
-
- 
+  .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-align: center;
+    width: 150px;
+    padding: 8px 0;
+    border-radius: 12px;
+    background-color: #272829;
+    font-size: 18px;
+    cursor: pointer;
+    color: #c7c7c7;
+    border: 0.5px solid #373839;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  .btn:hover {
+    background-color: #626263;
+  }
   @media screen and (max-width: 768px) {
     h1 {
-      font-size: 2.5rem; 
+      font-size: 2.5rem;
     }
     p {
       font-size: 1.5rem;
     }
   }
 </style>
+<script is:inline>
+function openModal() {
+    const openModalEvent = new CustomEvent('openModalEvent');
+    window.dispatchEvent(openModalEvent);
+  }
+</script>

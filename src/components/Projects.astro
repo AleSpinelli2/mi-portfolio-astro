@@ -5,19 +5,22 @@ import { proyectosJson } from "../data/projects.json";
 ---
 <div class="contenido">
   <div class="seccion-izquierda">
-    <div class="seccion-filtros">
-      <h1 class="subtitulo">FRONTEND/BACKEND/FULLSTACK</h1>
+    <div class="seccion-titulos">
+      <h1 class="subtitulo">FRONTEND/BACKEND</h1>
+      <h1 class="subtitulo">FULLSTACK</h1>
       <h2 class="titulo">Proyectos</h2>
-      <div _ngcontent-ng-c1445413196="" class="filters">
-        <p _ngcontent-ng-c1445413196="" class="">Todos</p>
-        <p _ngcontent-ng-c1445413196=""class="">Full Stack</p>
-        <p _ngcontent-ng-c1445413196="" class="">Frontend</p>
-        <p _ngcontent-ng-c1445413196="" class="">Backend</p>
-      </div>
+      
     </div>
-   
   </div>
   <div class="seccion-derecha">
+  <div class="seccion-filtros">
+    <div _ngcontent-ng-c1445413196="" class="filters">
+      <p _ngcontent-ng-c1445413196="" class="">Todos</p>
+      <p _ngcontent-ng-c1445413196=""class="">Full Stack</p>
+      <p _ngcontent-ng-c1445413196="" class="">Frontend</p>
+      <p _ngcontent-ng-c1445413196="" class="">Backend</p>
+    </div>
+  </div>
     {
       proyectosJson.map((proyectosJson) => (
         <div _ngcontent-ng-c1445413196="" class="project">
@@ -80,12 +83,13 @@ import { proyectosJson } from "../data/projects.json";
     box-sizing: border-box;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
-    border-bottom: 1px solid #272829;
+    
   }
 
   .seccion-izquierda {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin-left: 50px;
   }
 
   .seccion-derecha {
@@ -93,40 +97,37 @@ import { proyectosJson } from "../data/projects.json";
     padding-left: 20px;
   }
   .seccion-filtros {
-    display: grid;
-    margin-left: 50px;
-    align-items: start;
-    width: max-content;
-    justify-items: center;
-    text-align: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 100%; 
+}
 
-  .seccion-titulo {
+.seccion-titulos {
     display: grid;
     align-items: start;
     margin-left: 20px;
     width: max-content;
     justify-items: center;
+    text-align: center;
   }
 
-  .subtitulo {
-    width: max-content;
-    height: max-content;
-    margin: 0;
-  }
-
-  .titulo {
-    width: max-content;
-    height: max-content;
-    margin: 0;
-  }
+  .subtitulo, .titulo {
+  width: 100%; 
+  max-width: 100%;
+  height: auto; 
+  margin: 0;
+}
 
   h1 {
     font-family: "Inter", serif;
     font-weight: 500;
     font-size: 1.5rem;
-    letter-spacing: 3px;
     color: #ffffff;
+    letter-spacing: 3px;
   }
 
   h2 {
@@ -149,17 +150,21 @@ import { proyectosJson } from "../data/projects.json";
       grid-template-columns: 1fr;
       padding-top: 100px;
     }
+    .seccion-izquierda {
+    grid-template-columns: 1fr; 
   }
+  }
+  
 </style>
 <style ng-app-id="ng">
   .projects-container[_ngcontent-ng-c1445413196] {
     width: var(--container-size);
   }
 
-  h2[_ngcontent-ng-c1445413196] {
+  /* h2[_ngcontent-ng-c1445413196] {
     font-size: 25px;
     margin: 10px 0;
-  }
+  } */
 
   header[_ngcontent-ng-c1445413196] {
     display: grid;
@@ -167,13 +172,18 @@ import { proyectosJson } from "../data/projects.json";
   }
 
   header[_ngcontent-ng-c1445413196] h3[_ngcontent-ng-c1445413196] {
-    color: #5a8bd5;
+    color: #ffffff;
   }
 
-  header[_ngcontent-ng-c1445413196] h3[_ngcontent-ng-c1445413196],
+  header[_ngcontent-ng-c1445413196] h3[_ngcontent-ng-c1445413196]{
+    font-family: "Inter", serif;
+    font-weight: 600;
+  }
   header[_ngcontent-ng-c1445413196] p[_ngcontent-ng-c1445413196] {
     font-size: 15px;
     margin: 0;
+    font-family: "Inter", serif;
+    font-weight: 400;
   }
 
   .filters[_ngcontent-ng-c1445413196] {
@@ -184,7 +194,7 @@ import { proyectosJson } from "../data/projects.json";
     background-color: #252627;
     padding: 5px;
     margin-top:20px;
-    max-width: 400px;
+    width: 600px;
     border: 0.5px solid #424242;
     gap: 5px;
   }
@@ -276,7 +286,7 @@ import { proyectosJson } from "../data/projects.json";
   }
 
   p[_ngcontent-ng-c1445413196] {
-    color: #c0bdbd;
+    color: #ffffff;
   }
 
   #trello[_ngcontent-ng-c1445413196] {
@@ -340,7 +350,12 @@ import { proyectosJson } from "../data/projects.json";
   a[_ngcontent-ng-c1445413196]:hover {
     border: 0.5px solid #646669;
   }
-
+  @media screen and (max-width: 768px) {
+    .filters[_ngcontent-ng-c1445413196] {
+      gap: 0;
+      width: 100%;
+    }
+  }
   @media screen and (width <= 1100px) {
     header[_ngcontent-ng-c1445413196] {
       grid-template-columns: repeat(1, 1fr);
