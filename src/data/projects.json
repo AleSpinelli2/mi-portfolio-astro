@@ -37,6 +37,20 @@
         "imagen": "/img/FrontendObl2DDA.webp"
       },
       {
+        "titulo": "Tricoma Elctro",
+        "tipo": "Backend",
+        "descripcion": "Ecommerce para venta de electrodomesticos.",
+        "descripcion1": "Backend realizado para el ecommerce de electrodomesticos, brindandonos una api con multiples metodos .",
+        "tecnologias": ["React", "Next.js", "Spring boot","MySQL"],
+        "links": [
+          {
+            "tipo": "Backend",
+            "url": "https://github.com/AleSpinelli2/Obligatorio2DDA.git"
+          }
+        ],
+        "imagen": "/img/BackendSpringObl2DDA.webp"
+      },
+      {
         "titulo": "Kayak Agency",
         "tipo": "Frontend",
         "descripcion": "Aplicacion web para publicar eventos y lugares para practicar kayak.",
@@ -49,6 +63,19 @@
           }
         ],
         "imagen":"/img/FrontendKayak.webp"
+      },{
+        "titulo": "Ecommerce Pasteleria",
+        "tipo": "Full Stack",
+        "descripcion": "Ecommerce para la venta de productos de pasteleria artesanal.",
+        "descripcion1": "El sistema permite ver un amplio catalogo de productos y realizar pedidos.",
+        "tecnologias": ["React","NextJs"],
+        "links": [
+          {
+            "tipo": "Frontend",
+            "url": "https://github.com/AleSpinelli2/PaginaReposteria"
+          }
+        ],
+        "imagen":"/img/EcommercePasteleria.webp"
       }
     ]
   }

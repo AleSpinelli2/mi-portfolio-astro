@@ -1,39 +1,18 @@
 ---
-const navItems = [
-  {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
-  },
-  {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
-  },
-  {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
-  },
-  {
-    title: "Contacto",
-    label: "contacto",
-    url: "mailto:alejospinelli2@gmail.com",
-  },
-];
+
 ---
 
 <header class="header">
   <nav class="navbar">
     <div class="container">
-      <a class="logo">alespi.dev</a>
+      <a class="logo" href="#banner">alespi.dev</a>
       <ul class="nav-links">
-        <li><a href="#">sobre mi</a></li>
-        <li><a href="#">experiencia</a></li>
-        <li><a href="#">educación</a></li>
-        <li><a href="#">habilidades</a></li>
-        <li><a href="#">proyectos</a></li>
-        <li><a href="#">contacto</a></li>
+        <li><a href="#sobreMi">sobre mi</a></li>
+        <li><a href="#experiencia">experiencia</a></li>
+        <li><a href="#educacion">educación</a></li>
+        <li><a href="#habilidades">habilidades</a></li>
+        <li><a href="#proyectos">proyectos</a></li>
+        <li><a href="#contacto">contacto</a></li>
       </ul>
       <button class="nav-toggle" onclick="toggleNavButton()">
         <span class="nav-toggle-icon"></span>

@@ -79,7 +79,7 @@ import { proyectosJson } from "../data/projects.json";
     width: 100%;
     min-height: auto;
     background-color: #1a1a1a;
-    padding-top: 50px;
+    padding-top: 150px;
     box-sizing: border-box;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
@@ -397,31 +397,20 @@ import { proyectosJson } from "../data/projects.json";
 </style>
 <script is:inline>
   document.addEventListener("DOMContentLoaded", (event) => {
-    // Almacenar todas las tarjetas originales
     const allProjects = document.querySelectorAll(".project");
-
-    // Obtener referencia a los botones de filtro
     const buttons = document.querySelectorAll(".filters p");
-
     buttons.forEach((button) => {
-      button.addEventListener("click", (event) => {
-        // Eliminar la clase 'selected' de todos los botones de filtro
+      button.addEventListener("click", (event) => {  
         buttons.forEach((btn) => {
           btn.classList.remove("selected");
         });
-
-        // Agregar la clase 'selected' al botón de filtro seleccionado
         event.target.classList.add("selected");
-
         const filter = event.target.textContent.toLowerCase();
-
         if (filter === "todos") {
-          // Mostrar todas las tarjetas originales
           allProjects.forEach((project) => {
             project.style.display = "flex";
           });
         } else {
-          // Filtrar y mostrar las tarjetas que coinciden con la categoría seleccionada
           allProjects.forEach((project) => {
             const category = project.querySelector("header h3").textContent.toLowerCase();
             if (category === filter) {

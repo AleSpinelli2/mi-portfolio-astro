@@ -11,13 +11,7 @@ import Modal from "./Modal.astro"
     </p>
   </div>
   <div class="ver-mas">
-    <button
-      type="button"
-      class="btn"
-      onclick="openModal()"
-    >
-      VER MAS
-    </button>
+      <Modal/>
   </div>
 </div>
 
@@ -80,9 +74,3 @@ import Modal from "./Modal.astro"
     }
   }
 </style>
-<script is:inline>
-function openModal() {
-    const openModalEvent = new CustomEvent('openModalEvent');
-    window.dispatchEvent(openModalEvent);
-  }
-</script>

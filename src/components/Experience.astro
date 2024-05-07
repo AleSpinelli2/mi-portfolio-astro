@@ -5,150 +5,160 @@ import PersonalExperience from "./PersonalExperience.astro";
 import ExperienciaPersonal from "./PersonalExperience.astro";
 ---
 
-
-  <div class="contenido">
-    <div class="seccion-izquierda">
-      <div class="seccion-titulo">
-        <h1 class="subtitulo">PERSONALES/CARRERA</h1>
-        <h2 class="titulo">Experiencia</h2>
-      </div>
-      <div class="seccion-filtros">
-        <a class="filtros-texto" id="carrera-link">Carrera</a>
-        <a class="filtros-texto" id="personales-link">Personales</a>
-      </div>
+<div class="contenido">
+  <div class="seccion-izquierda">
+    <div class="seccion-titulo">
+      <h1 class="subtitulo">PERSONALES/CARRERA</h1>
+      <h2 class="titulo">Experiencia</h2>
     </div>
-    <div class="seccion-derecha" id="contenido-derecha">
-      <div id="experiencia-carrera" style="display: none;">
-        <CarerExperience />
-      </div>
-      <div id="experiencia-personal" style="display: none;">
-        <PersonalExperience />
-      </div>
+    <div class="seccion-filtros">
+      <a class="filtros-texto" id="carrera-link">Carrera</a>
+      <a class="filtros-texto" id="personales-link">Personales</a>
     </div>
   </div>
+  <div class="seccion-derecha" id="contenido-derecha">
+    <div id="experiencia-carrera" style="display: none;">
+      <CarerExperience />
+    </div>
+    <div id="experiencia-personal" style="display: none;">
+      <PersonalExperience />
+    </div>
+  </div>
+</div>
 
-  <style>
-    .contenido {
-      display: grid;
-      width: 100%;
-      min-height: auto;
-      background-color: #1a1a1a;
-      padding-top: 50px;
-      box-sizing: border-box;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: 40px;
-      border-bottom: 1px solid #272829;
+<style>
+  .contenido {
+    display: grid;
+    width: 100%;
+    min-height: auto;
+    background-color: #1a1a1a;
+    padding-top: 150px;
+    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    border-bottom: 1px solid #272829;
+    padding-bottom: 50px;
   }
-  
+
   .seccion-izquierda {
-      flex: 0 0 auto;
-      width: 300px;
-      background-color: #1a1a1a;
-      margin-left: 50px;
-      box-sizing: border-box;
+    flex: 0 0 auto;
+    width: 300px;
+    background-color: #1a1a1a;
+    margin-left: 50px;
+    box-sizing: border-box;
   }
-  
+
   .seccion-derecha {
-      flex: 1;
-      padding-left: 20px; 
+    flex: 1;
+    padding-left: 20px;
   }
   .seccion-filtros {
-      display: grid;
-      width: max-content;
-      justify-items: start;
-      margin-top: 50px;
-      margin-left: 25px;
+    display: grid;
+    width: max-content;
+    justify-items: start;
+    margin-top: 50px;
+    margin-left: 25px;
   }
-  
+
   .seccion-titulo {
-      display: grid;
-      align-items: start;
-      
-      width: max-content;
-      justify-items: center;
+    display: grid;
+    align-items: start;
+
+    width: max-content;
+    justify-items: center;
   }
-  
-  
+
   .subtitulo {
-      width: max-content;
-      height: max-content;
-      margin: 0;
+    width: max-content;
+    height: max-content;
+    margin: 0;
   }
-  
+
   .titulo {
-      width: max-content;
-      height: max-content;
-      margin: 0;
+    width: max-content;
+    height: max-content;
+    margin: 0;
   }
-  
+
   h1 {
-      font-family: "Inter", serif;
-      font-weight: 500;
-      font-size: 1.5rem; 
-      letter-spacing: 3px; 
-      color: #ffffff;
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: #ffffff;
   }
-  
+
   h2 {
-      font-family: "PlusJakartaSans", serif;
-      font-weight: 700;
-      font-size: 3rem; 
-      color: #b8ec4c;
+    font-family: "PlusJakartaSans", serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #b8ec4c;
   }
-  
+
   a.filtros-texto {
-      font-family: "Inter", serif;
-      font-weight: 500;
-      font-size: 1.5rem; 
-      color: #b8ec4c;
-      transition: color 0.3s ease;
-      cursor: pointer;
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #b8ec4c;
+    transition: color 0.3s ease;
+    cursor: pointer;
   }
-  
+  .seccion-filtros a.filtros-texto.selected {
+    color: #b8ec4c;
+    background-color: #353535;
+    border: 1.5px solid #5f6061;
+    border-radius: 1rem;
+    padding: 3px;
+  }
   a.filtros-texto:hover {
-      color: #4f514e;
+    color: #4f514e;
   }
-  
+
   .mostrar {
-      display: block;
+    display: block;
   }
-  
+
   @media (max-width: 768px) {
-      .contenido {
-          grid-template-columns: 1fr; 
-          padding-top: 100px; 
-      }
-  }
-  </style>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const carreraLink = document.getElementById("carrera-link");
-    const personalesLink = document.getElementById("personales-link");
-    const experienciaCarrera = document.getElementById("experiencia-carrera");
-    const experienciaPersonal = document.getElementById("experiencia-personal");
-
-    if (
-      carreraLink &&
-      personalesLink &&
-      experienciaCarrera &&
-      experienciaPersonal
-    ) {
-      function mostrarCarrera() {
-        experienciaCarrera!.style.display = "block";
-        experienciaPersonal!.style.display = "none";
-      }
-
-      function mostrarPersonales() {
-        experienciaCarrera!.style.display = "none";
-        experienciaPersonal!.style.display = "block";
-      }
-
-      carreraLink.addEventListener("click", mostrarCarrera);
-      personalesLink.addEventListener("click", mostrarPersonales);
-
-      mostrarCarrera();
-    } else {
-      console.error("Alguno de los elementos no se encontró.");
+    .contenido {
+      grid-template-columns: 1fr;
+      padding-top: 100px;
     }
-  });
+  }
+</style>
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+  const carreraLink = document.getElementById("carrera-link");
+  const personalesLink = document.getElementById("personales-link");
+  const experienciaCarrera = document.getElementById("experiencia-carrera");
+  const experienciaPersonal = document.getElementById("experiencia-personal");
+
+  if (
+    carreraLink &&
+    personalesLink &&
+    experienciaCarrera &&
+    experienciaPersonal
+  ) {
+    function mostrarCarrera() {
+      experienciaCarrera.style.display = "block";
+      experienciaPersonal.style.display = "none";
+      carreraLink.classList.add("selected");
+      personalesLink.classList.remove("selected");
+    }
+
+    function mostrarPersonales() {
+      experienciaCarrera.style.display = "none";
+      experienciaPersonal.style.display = "block";
+      carreraLink.classList.remove("selected");
+      personalesLink.classList.add("selected");
+    }
+
+    carreraLink.addEventListener("click", mostrarCarrera);
+    personalesLink.addEventListener("click", mostrarPersonales);
+
+    mostrarCarrera();
+  } else {
+    console.error("Alguno de los elementos no se encontró.");
+  }
+});
+
 </script>
