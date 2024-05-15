@@ -26,11 +26,7 @@
 
   .navbar {
     /* background-color: rgba(0, 0, 0, 0.5); */
-    background: linear-gradient(
-      180deg,
-      #1a1a1a 10%,
-      rgba(0, 0, 0, 0.5) 90.15%
-    );
+    background: linear-gradient(180deg, #1a1a1a 10%, rgba(0, 0, 0, 0.5) 90.15%);
     position: fixed;
     top: 0;
     width: 100%;
@@ -98,7 +94,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    display: none; 
+    display: none;
   }
 
   .nav-toggle-icon {
@@ -106,7 +102,7 @@
     width: 30px;
     height: 4px;
     background-color: #b8ec4c;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
   }
 
   .nav-toggle-icon::before,
@@ -132,11 +128,11 @@
   }
 
   .nav-toggle.open .nav-toggle-icon::before {
-    transform: translateY(0) rotate(90deg);
+    transform: translateY(0) rotate(0deg);
   }
 
   .nav-toggle.open .nav-toggle-icon::after {
-    transform: translateY(0) rotate(-90deg);
+    transform: translateY(0) rotate(-180deg);
   }
 
   @media screen and (max-width: 768px) {
@@ -176,35 +172,37 @@
   }
   .nav-links.active {
     display: block;
+    margin-top: 25px;
+    margin-left: 25px;
   }
 </style>
 <script>
   const navToggle = document.querySelector(".nav-toggle");
-const navLinks = document.querySelector(".nav-links");
+  const navLinks = document.querySelector(".nav-links");
 
-navToggle?.addEventListener("click", () => {
-  navToggle.classList.toggle("open");
-  navLinks?.classList.toggle("active");
-});
-
-function toggleNavButton() {
-  const screenWidth = window.innerWidth;
-  const halfScreenWidth = screenWidth / 2;
+  navToggle?.addEventListener("click", () => {
+    navToggle.classList.toggle("open");
+    navLinks?.classList.toggle("active");
+  });
 
   function toggleNavButton() {
-  const screenWidth = window.innerWidth;
-  const halfScreenWidth = screenWidth / 2;
+    const screenWidth = window.innerWidth;
+    const halfScreenWidth = screenWidth / 2;
 
-  if (navToggle instanceof HTMLElement) {
-    if (screenWidth <= halfScreenWidth) {
-      navToggle.style.display = "block";
-    } else {
-      navToggle.style.display = "none";
+    function toggleNavButton() {
+      const screenWidth = window.innerWidth;
+      const halfScreenWidth = screenWidth / 2;
+
+      if (navToggle instanceof HTMLElement) {
+        if (screenWidth <= halfScreenWidth) {
+          navToggle.style.display = "block";
+        } else {
+          navToggle.style.display = "none";
+        }
+      }
     }
   }
-}
-}
 
-toggleNavButton(); 
-window.addEventListener("resize", toggleNavButton);
+  toggleNavButton();
+  window.addEventListener("resize", toggleNavButton);
 </script>

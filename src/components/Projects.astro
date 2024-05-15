@@ -1,26 +1,26 @@
 ---
-import react from '@astrojs/react'
-import useState from '@astrojs/react'
+import react from "@astrojs/react";
+import useState from "@astrojs/react";
 import { proyectosJson } from "../data/projects.json";
 ---
+
 <div class="contenido">
   <div class="seccion-izquierda">
     <div class="seccion-titulos">
       <h1 class="subtitulo">FRONTEND/BACKEND</h1>
       <h1 class="subtitulo">FULLSTACK</h1>
       <h2 class="titulo">Proyectos</h2>
-      
     </div>
   </div>
   <div class="seccion-derecha">
-  <div class="seccion-filtros">
-    <div _ngcontent-ng-c1445413196="" class="filters">
-      <p _ngcontent-ng-c1445413196="" class="">Todos</p>
-      <p _ngcontent-ng-c1445413196=""class="">Full Stack</p>
-      <p _ngcontent-ng-c1445413196="" class="">Frontend</p>
-      <p _ngcontent-ng-c1445413196="" class="">Backend</p>
+    <div class="seccion-filtros">
+      <div _ngcontent-ng-c1445413196="" class="filters">
+        <p _ngcontent-ng-c1445413196="" class="">Todos</p>
+        <p _ngcontent-ng-c1445413196="" class="">Full Stack</p>
+        <p _ngcontent-ng-c1445413196="" class="">Frontend</p>
+        <p _ngcontent-ng-c1445413196="" class="">Backend</p>
+      </div>
     </div>
-  </div>
     {
       proyectosJson.map((proyectosJson) => (
         <div _ngcontent-ng-c1445413196="" class="project">
@@ -32,8 +32,12 @@ import { proyectosJson } from "../data/projects.json";
               <div _ngcontent-ng-c1445413196="" class="text">
                 <>
                   <h2 _ngcontent-ng-c1445413196="">{proyectosJson.titulo}</h2>
-                  <p _ngcontent-ng-c1445413196="">{proyectosJson.descripcion}</p>
-                  <p _ngcontent-ng-c1445413196="">{proyectosJson.descripcion1}</p>
+                  <p _ngcontent-ng-c1445413196="">
+                    {proyectosJson.descripcion}
+                  </p>
+                  <p _ngcontent-ng-c1445413196="">
+                    {proyectosJson.descripcion1}
+                  </p>
                 </>
               </div>
               <div _ngcontent-ng-c1445413196="" class="ancors">
@@ -83,7 +87,6 @@ import { proyectosJson } from "../data/projects.json";
     box-sizing: border-box;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
-    
   }
 
   .seccion-izquierda {
@@ -97,16 +100,16 @@ import { proyectosJson } from "../data/projects.json";
     padding-left: 20px;
   }
   .seccion-filtros {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center; 
-  margin-left: auto; 
-  margin-right: auto; 
-  width: 100%; 
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
 
-.seccion-titulos {
+  .seccion-titulos {
     display: grid;
     align-items: start;
     margin-left: 20px;
@@ -115,12 +118,13 @@ import { proyectosJson } from "../data/projects.json";
     text-align: center;
   }
 
-  .subtitulo, .titulo {
-  width: 100%; 
-  max-width: 100%;
-  height: auto; 
-  margin: 0;
-}
+  .subtitulo,
+  .titulo {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+  }
 
   h1 {
     font-family: "Inter", serif;
@@ -151,10 +155,9 @@ import { proyectosJson } from "../data/projects.json";
       padding-top: 100px;
     }
     .seccion-izquierda {
-    grid-template-columns: 1fr; 
+      grid-template-columns: 1fr;
+    }
   }
-  }
-  
 </style>
 <style ng-app-id="ng">
   .projects-container[_ngcontent-ng-c1445413196] {
@@ -175,7 +178,7 @@ import { proyectosJson } from "../data/projects.json";
     color: #ffffff;
   }
 
-  header[_ngcontent-ng-c1445413196] h3[_ngcontent-ng-c1445413196]{
+  header[_ngcontent-ng-c1445413196] h3[_ngcontent-ng-c1445413196] {
     font-family: "Inter", serif;
     font-weight: 600;
   }
@@ -193,7 +196,7 @@ import { proyectosJson } from "../data/projects.json";
     border-radius: 20px;
     background-color: #252627;
     padding: 5px;
-    margin-top:20px;
+    margin-top: 20px;
     width: 600px;
     border: 0.5px solid #424242;
     gap: 5px;
@@ -400,7 +403,7 @@ import { proyectosJson } from "../data/projects.json";
     const allProjects = document.querySelectorAll(".project");
     const buttons = document.querySelectorAll(".filters p");
     buttons.forEach((button) => {
-      button.addEventListener("click", (event) => {  
+      button.addEventListener("click", (event) => {
         buttons.forEach((btn) => {
           btn.classList.remove("selected");
         });
@@ -408,13 +411,15 @@ import { proyectosJson } from "../data/projects.json";
         const filter = event.target.textContent.toLowerCase();
         if (filter === "todos") {
           allProjects.forEach((project) => {
-            project.style.display = "flex";
+            project.style.display = "grid";
           });
         } else {
           allProjects.forEach((project) => {
-            const category = project.querySelector("header h3").textContent.toLowerCase();
+            const category = project
+              .querySelector("header h3")
+              .textContent.toLowerCase();
             if (category === filter) {
-              project.style.display = "flex";
+              project.style.display = "grid";
             } else {
               project.style.display = "none";
             }
