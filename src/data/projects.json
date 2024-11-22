@@ -1,81 +1,103 @@
 {
-    "proyectosJson": [
-      {
-        "titulo": "CinÉpico",
-        "tipo": "Frontend",
-        "descripcion": "Pagina web para la compra de boletos de cine.",
-        "descripcion1": "El sistema permite ver catalogos de peliculas, reservas de manera segura y seleccionar horarios y asientos.",
-        "tecnologias": ["HTML", "CSS", "JavaScript","C#","Entity Framework"],
-        "links": [
-          {
-            "tipo": "Frontend",
-            "url": "https://github.com/AleSpinelli2/Obligatorio2DDA.gits"
-          },
-          {
-            "tipo": "Sitio Web",
-            "url": "https://www.ejemplo.com/proyecto1"
-          }
-        ],
-        "imagen": "/img/Cinepico.webp"
-      },
-      {
-        "titulo": "Tricoma Elctro",
-        "tipo": "Full Stack",
-        "descripcion": "Ecommerce para venta de electrodomesticos.",
-        "descripcion1": "Aplicacion web para la gestion de una tienda de elctrodomesticos. Permite administrar, clientes, vendedores, productos y ventas .",
-        "tecnologias": ["React", "Next.js", "Spring boot","MySQL"],
-        "links": [
-          {
-            "tipo": "Frontend",
-            "url": "https://github.com/GuyaSuna/FrontDDA.git"
-          },
-          {
-            "tipo": "Backend",
-            "url": "https://github.com/AleSpinelli2/Obligatorio2DDA.git"
-          }
-        ],
-        "imagen": "/img/FrontendObl2DDA.webp"
-      },
-      {
-        "titulo": "Tricoma Elctro",
-        "tipo": "Backend",
-        "descripcion": "Ecommerce para venta de electrodomesticos.",
-        "descripcion1": "Backend realizado para el ecommerce de electrodomesticos, brindandonos una api con multiples metodos .",
-        "tecnologias": ["React", "Next.js", "Spring boot","MySQL"],
-        "links": [
-          {
-            "tipo": "Backend",
-            "url": "https://github.com/AleSpinelli2/Obligatorio2DDA.git"
-          }
-        ],
-        "imagen": "/img/BackendSpringObl2DDA.webp"
-      },
-      {
-        "titulo": "Kayak Agency",
-        "tipo": "Frontend",
-        "descripcion": "Aplicacion web para publicar eventos y lugares para practicar kayak.",
-        "descripcion1": "El sistema permite gestionar lugares y crear eventos de kayak. .",
-        "tecnologias": ["React","AWS"],
-        "links": [
-          {
-            "tipo": "Frontend",
-            "url": "https://github.com/AlexSumner/TallerFrontEnd.git"
-          }
-        ],
-        "imagen":"/img/FrontendKayak.webp"
-      },{
-        "titulo": "Ecommerce Pasteleria",
-        "tipo": "Full Stack",
-        "descripcion": "Ecommerce para la venta de productos de pasteleria artesanal.",
-        "descripcion1": "El sistema permite ver un amplio catalogo de productos y realizar pedidos.",
-        "tecnologias": ["React","NextJs"],
-        "links": [
-          {
-            "tipo": "Frontend",
-            "url": "https://github.com/AleSpinelli2/PaginaReposteria"
-          }
-        ],
-        "imagen":"/img/EcommercePasteleria.webp"
-      }
-    ]
-  }
+  "proyectosJson": [
+    {
+      "titulo": "CinÉpico",
+      "tipo": "Frontend",
+      "descripcion": "Pagina web para la compra de boletos de cine.",
+      "descripcion1": "El sistema permite ver catalogos de peliculas, reservas de manera segura y seleccionar horarios y asientos.",
+      "tecnologias": ["HTML", "CSS", "JavaScript", "C#", "Entity Framework"],
+      "links": [
+        {
+          "tipo": "Frontend",
+          "url": "https://github.com/AleSpinelli2/Obligatorio2DDA.gits"
+        },
+        {
+          "tipo": "Sitio Web",
+          "url": "https://www.ejemplo.com/proyecto1"
+        }
+      ],
+      "imagenes": ["/img/Cinepico.webp"]
+    },
+    {
+      "titulo": "Tricoma Elctro",
+      "tipo": "Full Stack",
+      "descripcion": "Ecommerce para venta de electrodomesticos.",
+      "descripcion1": "Aplicacion web para la gestion de una tienda de elctrodomesticos. Permite administrar, clientes, vendedores, productos y ventas .",
+      "tecnologias": ["React", "Next.js", "Spring boot", "MySQL"],
+      "links": [
+        {
+          "tipo": "Frontend",
+          "url": "https://github.com/GuyaSuna/FrontDDA.git"
+        },
+        {
+          "tipo": "Backend",
+          "url": "https://github.com/AleSpinelli2/Obligatorio2DDA.git"
+        }
+      ],
+      "imagenes": ["/img/FrontendObl2DDA.webp"]
+    },
+    {
+      "titulo": "Tricoma Elctro",
+      "tipo": "Backend",
+      "descripcion": "Ecommerce para venta de electrodomesticos.",
+      "descripcion1": "Backend realizado para el ecommerce de electrodomesticos, brindandonos una api con multiples metodos .",
+      "tecnologias": ["React", "Next.js", "Spring boot", "MySQL"],
+      "links": [
+        {
+          "tipo": "Backend",
+          "url": "https://github.com/AleSpinelli2/Obligatorio2DDA.git"
+        }
+      ],
+      "imagenes": ["/img/BackendSpringObl2DDA.webp"]
+    },
+    {
+      "titulo": "Kayak Agency",
+      "tipo": "Frontend",
+      "descripcion": "Aplicacion web para publicar eventos y lugares para practicar kayak.",
+      "descripcion1": "El sistema permite gestionar lugares y crear eventos de kayak. .",
+      "tecnologias": ["React", "AWS"],
+      "links": [
+        {
+          "tipo": "Frontend",
+          "url": "https://github.com/AlexSumner/TallerFrontEnd.git"
+        }
+      ],
+      "imagenes": ["/img/FrontendKayak.webp"]
+    },
+    {
+      "titulo": "Ecommerce Pasteleria",
+      "tipo": "Full Stack",
+      "descripcion": "Ecommerce para la venta de productos de pasteleria artesanal.",
+      "descripcion1": "El sistema permite ver un amplio catalogo de productos y realizar pedidos.",
+      "tecnologias": ["React", "NextJs"],
+      "links": [
+        {
+          "tipo": "Frontend",
+          "url": "https://github.com/AleSpinelli2/PaginaReposteria"
+        }
+      ],
+      "imagenes": ["/img/EcommercePasteleria.webp"]
+    },
+    {
+      "titulo": "Visoft",
+      "tipo": "Full Stack",
+      "descripcion": "Software para la gestion de cooperativas de viviendas de ayuda mutua.",
+      "descripcion1": "Proyecto realizado para la tesis final de la carrera como analista programador.",
+      "tecnologias": ["React", "NextJs", "Java", "Spring boot", "JWT"],
+      "links": [
+        {
+          "tipo": "Frontend",
+          "url": "https://github.com/GuyaSuna/Coperativa_web.git"
+        },
+        {
+          "tipo": "Backend",
+          "url": "https://github.com/AleSpinelli2/Cooperativa-backend.git"
+        }
+      ],
+      "imagenes": [
+        "/img/EcommercePasteleria.webp",
+        "/img/EcommercePasteleria.webp"
+      ]
+    }
+  ]
+}

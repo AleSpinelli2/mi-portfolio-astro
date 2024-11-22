@@ -2,6 +2,11 @@
 import react from "@astrojs/react";
 import useState from "@astrojs/react";
 import { proyectosJson } from "../data/projects.json";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
 ---
 
 <div class="contenido">
@@ -65,11 +70,24 @@ import { proyectosJson } from "../data/projects.json";
             </>
           </div>
           <div _ngcontent-ng-c1445413196="" class="cover">
-            <img
-              _ngcontent-ng-c1445413196=""
-              src={proyectosJson.imagen}
-              class="img-cover"
-            />
+            <Swiper
+              modules={[Navigation, Pagination]}
+              navigation
+              pagination={{ clickable: true }}
+              spaceBetween={10}
+              slidesPerView={1}
+              className="project-carousel"
+            >
+              {proyectosJson.imagenes.map((imagen, index) => (
+                <SwiperSlide>
+                  <img
+                    _ngcontent-ng-c1445413196=""
+                    src={imagen}
+                    class="img-cover"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       ))
@@ -149,6 +167,7 @@ import { proyectosJson } from "../data/projects.json";
     transition: color 0.3s ease;
     cursor: pointer;
   }
+  
   @media (max-width: 768px) {
     .contenido {
       grid-template-columns: 1fr;
@@ -282,6 +301,7 @@ import { proyectosJson } from "../data/projects.json";
     align-items: center;
     justify-content: center;
     gap: 5px;
+    overflow: hidden;
   }
 
   .info[_ngcontent-ng-c1445413196] p[_ngcontent-ng-c1445413196] {
