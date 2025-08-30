@@ -5,8 +5,8 @@ import LineaTiempo from "./Timeline.astro";
 <div class="container">
   <div class="seccion-izquierda">
     <div class="seccion-titulo">
-      <h1 class="subtitulo">ESTUDIOS/CURSOS</h1>
       <h2 class="titulo">Educación</h2>
+      <h1 class="subtitulo">ESTUDIOS/CURSOS</h1>
     </div>
     <div class="seccion-linea">
       <LineaTiempo />
@@ -30,35 +30,38 @@ import LineaTiempo from "./Timeline.astro";
 
 <style>
   .container {
-    display: grid;
+    display: flex;
     width: 100%;
     min-height: auto;
     background-color: #1a1a1a;
     box-sizing: border-box;
-    padding-top: 150px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 80px 20px 50px 20px;
     gap: 40px;
     border-bottom: 1px solid #272829;
   }
+
   .seccion-izquierda {
-    display: grid;
-    align-items: start;
-    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 100%;
-    justify-items: start;
+    max-width: 500px;
   }
+
   .seccion-derecha {
-    display: grid;
-    margin-right: 150px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    justify-items: center;
+    justify-content: center;
   }
+
   .seccion-titulo {
-    display: grid;
-    align-items: start;
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: max-content;
-    justify-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
   }
 
   .subtitulo {
@@ -72,45 +75,179 @@ import LineaTiempo from "./Timeline.astro";
     height: max-content;
     margin: 0;
   }
+
   h1 {
     font-family: "Inter", serif;
     font-weight: 500;
     font-size: 1.5rem;
     letter-spacing: 2px;
     color: #ffffff;
+    margin: 0;
   }
+
   h2 {
     font-family: "PlusJakartaSans", serif;
     font-weight: 700;
     font-size: 3rem;
     color: #b8ec4c;
+    margin: 0;
   }
+
   p {
     font-family: "Inter", serif;
     font-weight: 400;
     font-size: 1.2rem;
     color: white;
-    margin: 25px 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin: 0 0 20px 0;
+    line-height: 1.6;
   }
 
-  @media screen and (max-width: 768px) {
-    .contenido {
-      grid-template-columns: 1fr;
-      gap: 20px;
-      padding-top: 100px;
-      margin: 0 20px;
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Responsive para tablets grandes */
+  @media screen and (max-width: 1024px) {
+    .container {
+      padding: 60px 15px 40px 15px;
+      gap: 30px;
     }
 
     .seccion-izquierda {
-      margin-left: 0;
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 1.3rem;
+      letter-spacing: 1.5px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+  }
+
+  /* Responsive para tablets */
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      padding: 50px 15px 30px 15px;
+      gap: 30px;
+    }
+
+    .seccion-izquierda {
+      max-width: 100%;
+      align-items: center;
+    }
+
+    .seccion-titulo {
+      align-items: center;
+      text-align: center;
+      margin-bottom: 25px;
     }
 
     .seccion-derecha {
-      margin-right: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+  }
+
+  /* Responsive para móviles grandes */
+  @media screen and (max-width: 480px) {
+    .container {
+      padding: 40px 10px 25px 10px;
+      gap: 25px;
+    }
+
+    .seccion-titulo {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+  }
+
+  /* Responsive para móviles medianos */
+  @media screen and (max-width: 360px) {
+    .container {
+      padding: 30px 8px 20px 8px;
+      gap: 20px;
+    }
+
+    .seccion-titulo {
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+  }
+
+  /* Responsive para móviles pequeños */
+  @media screen and (max-width: 280px) {
+    .container {
+      padding: 25px 5px 15px 5px;
+      gap: 15px;
+    }
+
+    .seccion-titulo {
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 0.8rem;
+      letter-spacing: 0.2px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      line-height: 1.9;
     }
   }
 </style>

@@ -5,69 +5,58 @@ import Slider from "./Slider.astro";
 <div class="container">
   <div class="seccion-izquierda">
     <div class="seccion-titulo">
-      <h1 class="subtitulo">LENGUAJES/APTITUDES</h1>
       <h2 class="titulo">Habilidades</h2>
+      <h1 class="subtitulo">LENGUAJES/APTITUDES</h1>
     </div>
   </div>
   
-    <div class="slider">
-      <Slider />
-    </div>
+  <div class="slider">
+    <Slider />
+  </div>
   
 </div>
-<style lang="scss">
+<style>
   .container {
-  display: inherit;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  background-color: #1a1a1a;
-  border-bottom: 2px solid #272829;
-  padding-bottom: 50px;
-  padding-top: 250px;
-}
-
-.seccion-izquierda {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #272829;
+    padding: 80px 20px 50px 20px;
+    box-sizing: border-box;
   }
 
-  .seccion-derecha {
-    flex: 1;
-    padding-left: 20px;
+  .seccion-izquierda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
   }
-  .seccion-filtros {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center; 
-  margin-left: auto; 
-  margin-right: auto; 
-  width: 100%; 
-}
 
   .seccion-titulo {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-left: 20px;
-    width: max-content;
-    justify-items: center;
+    justify-content: center;
     text-align: center;
+    gap: 10px;
   }
 
   .subtitulo, .titulo {
-  width: 100%; 
-  max-width: 100%;
-  height: auto; 
-  margin: 0;
-  text-align: center;
-}
+    width: 100%; 
+    max-width: 100%;
+    height: auto; 
+    margin: 0;
+    text-align: center;
+  }
+
   h1 {
     font-family: "Inter", serif;
     font-weight: 500;
     font-size: 1.5rem;
     letter-spacing: 2px;
     color: #ffffff;
+    margin: 0;
   }
 
   h2 {
@@ -75,39 +64,130 @@ import Slider from "./Slider.astro";
     font-weight: 700;
     font-size: 3rem;
     color: #b8ec4c;
+    margin: 0;
   }
+
   .slider {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  margin-top: 100px;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
 
-@media (max-width: 768px) {
-    .contenido {
-      grid-template-columns: 1fr;
-      padding-top: 100px;
-    }
-    
-  .seccion-izquierda {
-      margin-left: 0;
+  /* Responsive para tablets grandes */
+  @media screen and (max-width: 1024px) {
+    .container {
+      padding: 60px 15px 40px 15px;
     }
 
-    .seccion-derecha {
-      margin-right: 0;
+    .seccion-izquierda {
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 1.3rem;
+      letter-spacing: 1.5px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
     }
   }
 
-  @media screen and (min-width: 1024px) {
+  /* Responsive para tablets */
+  @media screen and (max-width: 768px) {
     .container {
-      grid-template-columns: 1fr 2fr;
-      padding-top: 150px;
+      padding: 50px 15px 30px 15px;
     }
 
-    .seccion-titulo {
-      text-align: left;
-      margin-bottom: 0;
+    .seccion-izquierda {
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .slider {
+      gap: 10px;
+    }
+  }
+
+  /* Responsive para móviles grandes */
+  @media screen and (max-width: 480px) {
+    .container {
+      padding: 40px 10px 25px 10px;
+    }
+
+    .seccion-izquierda {
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .slider {
+      gap: 8px;
+    }
+  }
+
+  /* Responsive para móviles medianos */
+  @media screen and (max-width: 360px) {
+    .container {
+      padding: 30px 8px 20px 8px;
+    }
+
+    .seccion-izquierda {
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    .slider {
+      gap: 6px;
+    }
+  }
+
+  /* Responsive para móviles pequeños */
+  @media screen and (max-width: 280px) {
+    .container {
+      padding: 25px 5px 15px 5px;
+    }
+
+    .seccion-izquierda {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 0.8rem;
+      letter-spacing: 0.2px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    .slider {
+      gap: 5px;
     }
   }
 </style>

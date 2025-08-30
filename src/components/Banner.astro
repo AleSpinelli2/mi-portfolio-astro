@@ -5,17 +5,21 @@
 <div class="container">
   <div class="seccion-titulo">
     <h1 class="titulo">Bienvenidos</h1>
-    <span class="span"><h1 class="subtitulo">a mi portfolio</h1> <div class="linea"></div></span>
-    
-    
+    <span class="span">
+      <h1 class="subtitulo">a mi portfolio</h1> 
+      <div class="linea"></div>
+    </span>
   </div>
   <div class="perfil">
-    <img
-      class="img-perfil"
-      src="../img/FotoPerfil.png"
-      alt="Foto de perfil"
-    />
-    <div class="shadow bottom"></div>
+    <div class="foto-container">
+      <img
+        class="img-perfil"
+        src="../img/fotoPerfilRemasterizada.png"
+        alt="Foto de perfil"
+      />
+      <div class="foto-border"></div>
+      <div class="foto-glow"></div>
+    </div>
   </div>
 </div>
 
@@ -25,40 +29,98 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: max-content;
-    margin-top: 75px;
+    min-height: 100vh;
+    padding: 120px 20px 60px 20px;
+    box-sizing: border-box;
+    width: 100%;
   }
 
   .perfil {
     position: relative; 
-    margin-right: 20px;
+    margin-left: 20px;
+    flex-shrink: 0;
+  }
+
+  .foto-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .img-perfil {
     width: 100%;
-    max-width: 480px;
-    height: 480px;
-    z-index: 2; 
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 3;
+    position: relative;
+    border: 4px solid #b8ec4c;
+    box-shadow: 
+      0 0 30px rgba(184, 236, 76, 0.3),
+      0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
   }
 
-  .shadow {
+  .img-perfil:hover {
+    transform: scale(1.05);
+    box-shadow: 
+      0 0 50px rgba(184, 236, 76, 0.5),
+      0 25px 50px rgba(0, 0, 0, 0.5);
+  }
+
+  .foto-border {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px; 
-    background: linear-gradient(
-      180deg,
-      rgba(0, 2, 18, 0) 0%,
-      #1a1a1a 91.15%
-    );
-    z-index: 1; 
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid rgba(184, 236, 76, 0.3);
+    border-radius: 50%;
+    z-index: 2;
+    animation: rotate 10s linear infinite;
+  }
+
+  .foto-glow {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(circle, rgba(184, 236, 76, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.1);
+    }
   }
 
   .seccion-titulo {
-    display: grid;
-    align-items: start;
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1;
+    max-width: 600px;
   }
 
   a {
@@ -75,8 +137,8 @@
     font-size: 4rem;
     font-weight: 300;
     color: #fcfcfc;
-    margin-left: 20px;
-    margin-top: 0rem;
+    margin: 0;
+    line-height: 1.1;
   }
 
   h1.titulo {
@@ -85,7 +147,8 @@
     font-weight: 300;
     color: #b8ec4c;
     display: block;
-    margin: 0rem;
+    margin: 0 0 10px 0;
+    line-height: 1.1;
   }
 
   .linea {
@@ -93,31 +156,204 @@
     width: 100%;
     max-width: 450px;
     background-color: #b8ec4c;
-    margin-bottom: 5px;
+    margin-top: 20px;
+    border-radius: 1px;
   }
 
-  @media screen and (max-width: 768px) {
+  /* Responsive para tablets grandes */
+  @media screen and (max-width: 1024px) {
     .container {
-      flex-direction: column;
-      align-items: stretch;
-      padding: 20px;
+      padding: 100px 15px 50px 15px;
+      gap: 40px;
     }
 
-    .perfil {
-      margin-right: 0;
+    h1.titulo,
+    h1.subtitulo {
+      font-size: 3.5rem;
     }
 
     .img-perfil {
-      max-width: 100%;
-      height: auto;
+      max-width: 450px;
+    }
+
+    .foto-border {
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
+    }
+
+    .foto-glow {
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      bottom: -15px;
+    }
+  }
+
+  /* Responsive para tablets */
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 15px 40px 15px;
+      gap: 30px;
+    }
+
+    .perfil {
+      margin-left: 0;
+      order: 1;
     }
 
     .seccion-titulo {
-      margin-left: 0;
+      order: 2;
+      align-items: center;
+      text-align: center;
+    }
+
+    .img-perfil {
+      max-width: 380px;
+    }
+
+    h1.titulo,
+    h1.subtitulo {
+      font-size: 3rem;
     }
 
     .linea {
-      margin-bottom: 10px;
+      margin-top: 15px;
+      max-width: 300px;
+    }
+
+    .foto-border {
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+    }
+
+    .foto-glow {
+      top: -12px;
+      left: -12px;
+      right: -12px;
+      bottom: -12px;
+    }
+  }
+
+  /* Responsive para móviles grandes */
+  @media screen and (max-width: 480px) {
+    .container {
+      padding: 70px 10px 30px 10px;
+      gap: 25px;
+    }
+
+    .img-perfil {
+      max-width: 320px;
+      border-width: 3px;
+    }
+
+    h1.titulo,
+    h1.subtitulo {
+      font-size: 2.5rem;
+    }
+
+    .linea {
+      margin-top: 12px;
+      max-width: 250px;
+      height: 2px;
+    }
+
+    .foto-border {
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border-width: 1px;
+    }
+
+    .foto-glow {
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+    }
+  }
+
+  /* Responsive para móviles medianos */
+  @media screen and (max-width: 360px) {
+    .container {
+      padding: 60px 8px 25px 8px;
+      gap: 20px;
+    }
+
+    .img-perfil {
+      max-width: 260px;
+      border-width: 2px;
+    }
+
+    h1.titulo,
+    h1.subtitulo {
+      font-size: 2rem;
+    }
+
+    .linea {
+      margin-top: 10px;
+      max-width: 200px;
+      height: 1.5px;
+    }
+
+    .foto-border {
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+    }
+
+    .foto-glow {
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+    }
+  }
+
+  /* Responsive para móviles pequeños */
+  @media screen and (max-width: 280px) {
+    .container {
+      padding: 50px 5px 20px 5px;
+      gap: 15px;
+    }
+
+    .img-perfil {
+      max-width: 200px;
+      border-width: 2px;
+    }
+
+    h1.titulo,
+    h1.subtitulo {
+      font-size: 1.8rem;
+    }
+
+    .linea {
+      margin-top: 8px;
+      max-width: 180px;
+      height: 1px;
+    }
+
+    .foto-border {
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+    }
+
+    .foto-glow {
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
     }
   }
 </style>

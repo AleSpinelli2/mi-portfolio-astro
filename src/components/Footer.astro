@@ -21,34 +21,38 @@
   </div>
 </footer>
 
-<style >
+<style>
   footer {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     background-image: linear-gradient(to top, #000 75%, #1a1a1a);
+    padding: 20px 0;
   }
 
   .container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 960px;
-    padding: 40px 0;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 20px;
+    margin: 0 auto;
   }
 
   .footer-info {
     display: flex;
     flex-direction: column;
-    align-items: baseline;
+    align-items: flex-start;
     justify-content: center;
-    gap: 7px;
+    gap: 10px;
   }
 
   .footer-info p {
     margin: 0;
     color: #c7c5c580;
+    font-size: 14px;
   }
 
   .footer-info .contact-email,
@@ -56,9 +60,11 @@
     color: #fff;
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 8px;
     opacity: .7;
     transition: transform .4s ease-out;
+    text-decoration: none;
+    font-size: 14px;
   }
 
   .footer-info .contact-email:hover,
@@ -70,6 +76,7 @@
   .footer-info .email-svg,
   .svg {
     height: 18px;
+    width: 18px;
     filter: grayscale(100%);
   }
 
@@ -80,6 +87,8 @@
     gap: 40px;
     padding: 0;
     list-style-type: none;
+    margin: 0;
+    flex-wrap: wrap;
   }
 
   .ancors-container li {
@@ -92,26 +101,130 @@
     opacity: .5;
   }
 
-  @media screen and (max-width: 900px) {
+  /* Responsive para tablets grandes */
+  @media screen and (max-width: 1024px) {
     .container {
-      width: 500px;
+      padding: 30px 15px;
+    }
+
+    .ancors-container {
+      gap: 30px;
+    }
+  }
+
+  /* Responsive para tablets */
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 25px 15px;
+    }
+
+    .ancors-container {
+      gap: 25px;
+    }
+
+    .footer-info .contact-email,
+    .ancors-container .redes {
+      font-size: 13px;
+      gap: 6px;
+    }
+
+    .footer-info .email-svg,
+    .svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  /* Responsive para móviles grandes */
+  @media screen and (max-width: 480px) {
+    .container {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 10px;
+      text-align: center;
+    }
+
+    .footer-info {
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ancors-container {
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .footer-info .contact-email,
+    .ancors-container .redes {
+      font-size: 12px;
+      gap: 5px;
+    }
+
+    .footer-info .email-svg,
+    .svg {
+      height: 15px;
+      width: 15px;
+    }
+
+    .footer-info p {
+      font-size: 12px;
+    }
+  }
+
+  /* Responsive para móviles medianos */
+  @media screen and (max-width: 360px) {
+    .container {
+      padding: 15px 8px;
+      gap: 15px;
+    }
+
+    .ancors-container {
+      gap: 15px;
+    }
+
+    .footer-info .contact-email,
+    .ancors-container .redes {
+      font-size: 11px;
+      gap: 4px;
+    }
+
+    .footer-info .email-svg,
+    .svg {
+      height: 14px;
+      width: 14px;
+    }
+
+    .footer-info p {
+      font-size: 11px;
+    }
+  }
+
+  /* Responsive para móviles pequeños */
+  @media screen and (max-width: 280px) {
+    .container {
+      padding: 10px 5px;
+      gap: 10px;
     }
 
     .ancors-container {
       gap: 10px;
-    }
-  }
-
-  @media screen and (max-width: 720px) {
-    .container {
-      width: 300px;
       flex-direction: column;
-      gap: 10px;
     }
 
-    .container .footer-info {
-      align-items: center;
-      gap: 10px;
+    .footer-info .contact-email,
+    .ancors-container .redes {
+      font-size: 10px;
+      gap: 3px;
+    }
+
+    .footer-info .email-svg,
+    .svg {
+      height: 12px;
+      width: 12px;
+    }
+
+    .footer-info p {
+      font-size: 10px;
     }
   }
 </style>

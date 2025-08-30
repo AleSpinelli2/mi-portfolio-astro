@@ -5,11 +5,21 @@ const { class: className, id } = Astro.props;
 <section
   id={id}
   data-section={id}
-  class=`section`
-  >
-  <!-- class={`section ${className} scroll-m-20 w-auto mx-auto container lg:max-w-6xl md:max-w-2xl`} -->
-
+  class={`section ${className || ''}`}
+>
   <slot />
 </section>
+
+<style>
+  .section {
+    width: 100%;
+    display: block;
+  }
+
+  /* Solo para la primera sección (Banner) */
+  .section:first-child {
+    min-height: 100vh;
+  }
+</style>
 
 

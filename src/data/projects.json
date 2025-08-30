@@ -87,14 +87,14 @@
       "links": [
         {
           "tipo": "Frontend",
-          "url": "https://github.com/AleSpinelli2/Visoft-Software.git"
+          "url": "https://github.com/AleSpinelli2/visoft-software.git"
         },
         {
           "tipo": "Backend",
-          "url": "https://github.com/AleSpinelli2/Cooperativa-backend.git"
+          "url": "https://github.com/AleSpinelli2/visoft-software.git"
         }
       ],
-      "imagenes": ["/img/Visoft-Dark.webp"]
+      "imagenes": ["/img/Login-Visoft.webp","/img/Visoft-Dark.webp"]
     }
   ]
 }

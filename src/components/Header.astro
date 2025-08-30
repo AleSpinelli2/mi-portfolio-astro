@@ -22,16 +22,17 @@
 </header>
 <style>
   .header {
+    width: 100%;
   }
 
   .navbar {
-    /* background-color: rgba(0, 0, 0, 0.5); */
     background: linear-gradient(180deg, #1a1a1a 10%, rgba(0, 0, 0, 0.5) 90.15%);
     position: fixed;
     top: 0;
     width: 100%;
     height: 90px;
     z-index: 1000;
+    backdrop-filter: blur(10px);
   }
 
   .container {
@@ -39,6 +40,9 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 
   .logo {
@@ -47,18 +51,24 @@
     font-weight: 800;
     font-size: 42px;
     text-decoration: none;
-    margin-left: 50px;
+    transition: all 0.3s ease;
+  }
+
+  .logo:hover {
+    transform: scale(1.05);
   }
 
   .nav-links {
     list-style: none;
     display: flex;
     color: #b8ec4c;
-    margin-right: 150px;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
   }
 
   .nav-links li {
-    margin-right: 20px;
+    margin: 0;
   }
 
   .nav-links li a {
@@ -68,6 +78,8 @@
     font-weight: 500;
     font-size: 16px;
     position: relative;
+    transition: all 0.3s ease;
+    padding: 8px 0;
   }
 
   .nav-links li a::after {
@@ -95,6 +107,13 @@
     border: none;
     cursor: pointer;
     display: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-toggle:hover {
+    background-color: rgba(184, 236, 76, 0.1);
   }
 
   .nav-toggle-icon {
@@ -102,7 +121,8 @@
     width: 30px;
     height: 4px;
     background-color: #b8ec4c;
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease;
+    border-radius: 2px;
   }
 
   .nav-toggle-icon::before,
@@ -113,6 +133,7 @@
     height: 4px;
     background-color: #b8ec4c;
     transition: transform 0.3s ease;
+    border-radius: 2px;
   }
 
   .nav-toggle-icon::before {
@@ -135,45 +156,158 @@
     transform: translateY(0) rotate(-180deg);
   }
 
-  @media screen and (max-width: 768px) {
+  /* Responsive para tablets */
+  @media screen and (max-width: 1024px) {
     .container {
-      padding: 0 20px;
+      padding: 0 15px;
     }
 
     .logo {
-      margin-left: 20px;
+      font-size: 36px;
+    }
+
+    .nav-links {
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      font-size: 15px;
+    }
+  }
+
+  /* Responsive para móviles grandes */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      height: 70px;
+    }
+
+    .container {
+      padding: 0 15px;
+    }
+
+    .logo {
+      font-size: 28px;
     }
 
     .nav-links {
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 50px;
+      top: 70px;
       left: 0;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 999;
+      background-color: rgba(26, 26, 26, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 20px 0;
+      gap: 0;
+      border-top: 1px solid #272829;
+    }
+
+    .nav-links.active {
+      display: flex;
     }
 
     .nav-links li {
-      margin-right: 0;
-      margin-bottom: 10px;
-    }
-    .nav-toggle {
-      display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
+      margin: 0;
+      width: 100%;
     }
 
-    .nav-toggle-label {
+    .nav-links li a {
+      display: block;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      background-color: rgba(184, 236, 76, 0.1);
+      color: #b8ec4c;
+    }
+
+    .nav-links li:last-child a {
+      border-bottom: none;
+    }
+
+    .nav-toggle {
       display: block;
     }
   }
-  .nav-links.active {
-    display: block;
-    margin-top: 25px;
-    margin-left: 25px;
+
+  /* Responsive para móviles medianos */
+  @media screen and (max-width: 480px) {
+    .navbar {
+      height: 60px;
+    }
+
+    .container {
+      padding: 0 10px;
+    }
+
+    .logo {
+      font-size: 24px;
+    }
+
+    .nav-links {
+      top: 60px;
+      padding: 15px 0;
+    }
+
+    .nav-links li a {
+      padding: 12px 20px;
+      font-size: 15px;
+    }
+
+    .nav-toggle-icon,
+    .nav-toggle-icon::before,
+    .nav-toggle-icon::after {
+      width: 25px;
+      height: 3px;
+    }
+
+    .nav-toggle-icon::before {
+      transform: translateY(-8px);
+    }
+
+    .nav-toggle-icon::after {
+      transform: translateY(8px);
+    }
+  }
+
+  /* Responsive para móviles pequeños */
+  @media screen and (max-width: 360px) {
+    .navbar {
+      height: 55px;
+    }
+
+    .logo {
+      font-size: 20px;
+    }
+
+    .nav-links {
+      top: 55px;
+      padding: 10px 0;
+    }
+
+    .nav-links li a {
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+
+    .nav-toggle-icon,
+    .nav-toggle-icon::before,
+    .nav-toggle-icon::after {
+      width: 22px;
+      height: 2px;
+    }
+
+    .nav-toggle-icon::before {
+      transform: translateY(-6px);
+    }
+
+    .nav-toggle-icon::after {
+      transform: translateY(6px);
+    }
   }
 </style>
 <script>
@@ -185,20 +319,30 @@
     navLinks?.classList.toggle("active");
   });
 
+  // Cerrar menú al hacer clic en un enlace
+  navLinks?.addEventListener("click", (e) => {
+    if (e.target instanceof HTMLAnchorElement) {
+      navToggle?.classList.remove("open");
+      navLinks?.classList.remove("active");
+    }
+  });
+
+  // Cerrar menú al redimensionar la ventana
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      navToggle?.classList.remove("open");
+      navLinks?.classList.remove("active");
+    }
+  });
+
   function toggleNavButton() {
     const screenWidth = window.innerWidth;
-    const halfScreenWidth = screenWidth / 2;
-
-    function toggleNavButton() {
-      const screenWidth = window.innerWidth;
-      const halfScreenWidth = screenWidth / 2;
-
-      if (navToggle instanceof HTMLElement) {
-        if (screenWidth <= halfScreenWidth) {
-          navToggle.style.display = "block";
-        } else {
-          navToggle.style.display = "none";
-        }
+    
+    if (navToggle instanceof HTMLElement) {
+      if (screenWidth <= 768) {
+        navToggle.style.display = "block";
+      } else {
+        navToggle.style.display = "none";
       }
     }
   }

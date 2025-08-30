@@ -8,12 +8,12 @@ import ExperienciaPersonal from "./PersonalExperience.astro";
 <div class="contenido">
   <div class="seccion-izquierda">
     <div class="seccion-titulo">
-      <h1 class="subtitulo">PERSONALES/CARRERA</h1>
       <h2 class="titulo">Experiencia</h2>
+      <h1 class="subtitulo">PROYECTOS/LABORAL</h1>
     </div>
     <div class="seccion-filtros">
-      <a class="filtros-texto" id="carrera-link">Carrera</a>
-      <a class="filtros-texto" id="personales-link">Personales</a>
+      <a class="filtros-texto" id="carrera-link">Proyectos</a>
+      <a class="filtros-texto" id="personales-link">Laboral</a>
     </div>
   </div>
   <div class="seccion-derecha" id="contenido-derecha">
@@ -28,44 +28,43 @@ import ExperienciaPersonal from "./PersonalExperience.astro";
 
 <style>
   .contenido {
-    display: grid;
+    display: flex;
     width: 100%;
     min-height: auto;
     background-color: #1a1a1a;
-    padding-top: 150px;
+    padding: 80px 20px 50px 20px;
     box-sizing: border-box;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     border-bottom: 1px solid #272829;
-    padding-bottom: 50px;
   }
 
   .seccion-izquierda {
     flex: 0 0 auto;
     width: 300px;
     background-color: #1a1a1a;
-    margin-left: 50px;
     box-sizing: border-box;
   }
 
   .seccion-derecha {
     flex: 1;
-    padding-left: 20px;
+    min-width: 0;
   }
+
   .seccion-filtros {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     width: max-content;
     justify-items: start;
     margin-top: 50px;
-    margin-left: 25px;
+    gap: 15px;
   }
 
   .seccion-titulo {
-    display: grid;
-    align-items: start;
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: max-content;
-    justify-items: center;
+    gap: 10px;
   }
 
   .subtitulo {
@@ -84,8 +83,9 @@ import ExperienciaPersonal from "./PersonalExperience.astro";
     font-family: "Inter", serif;
     font-weight: 500;
     font-size: 1.5rem;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: #ffffff;
+    margin: 0;
   }
 
   h2 {
@@ -93,6 +93,7 @@ import ExperienciaPersonal from "./PersonalExperience.astro";
     font-weight: 700;
     font-size: 3rem;
     color: #b8ec4c;
+    margin: 0;
   }
 
   a.filtros-texto {
@@ -100,35 +101,167 @@ import ExperienciaPersonal from "./PersonalExperience.astro";
     font-weight: 500;
     font-size: 1.5rem;
     color: #b8ec4c;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 1rem;
+    border: 1.5px solid transparent;
   }
+
   .seccion-filtros a.filtros-texto.selected {
     color: #b8ec4c;
     background-color: #353535;
     border: 1.5px solid #5f6061;
-    border-radius: 1rem;
-    padding: 3px;
   }
+
   a.filtros-texto:hover {
     color: #4f514e;
+    background-color: rgba(184, 236, 76, 0.1);
   }
 
   .mostrar {
     display: block;
   }
 
-  @media (max-width: 768px) {
+  /* Responsive para tablets grandes */
+  @media screen and (max-width: 1024px) {
     .contenido {
-      grid-template-columns: 1fr;
-      padding-top: 100px;
-    }
-    .seccion-izquierda {
-      margin-left: 0;
+      padding: 60px 15px 40px 15px;
+      gap: 30px;
     }
 
-    .seccion-derecha {
-      margin-right: 0;
+    .seccion-izquierda {
+      width: 250px;
+    }
+
+    h1 {
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    a.filtros-texto {
+      font-size: 1.3rem;
+      padding: 6px 12px;
+    }
+  }
+
+  /* Responsive para tablets */
+  @media screen and (max-width: 768px) {
+    .contenido {
+      flex-direction: column;
+      padding: 50px 15px 30px 15px;
+      gap: 30px;
+    }
+
+    .seccion-izquierda {
+      width: 100%;
+      text-align: center;
+    }
+
+    .seccion-titulo {
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .seccion-filtros {
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    h1 {
+      font-size: 1.1rem;
+      letter-spacing: 1.5px;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    a.filtros-texto {
+      font-size: 1.1rem;
+      padding: 5px 10px;
+    }
+  }
+
+  /* Responsive para móviles grandes */
+  @media screen and (max-width: 480px) {
+    .contenido {
+      padding: 40px 10px 25px 10px;
+      gap: 25px;
+    }
+
+    .seccion-filtros {
+      gap: 8px;
+    }
+
+    h1 {
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    a.filtros-texto {
+      font-size: 1rem;
+      padding: 4px 8px;
+    }
+  }
+
+  /* Responsive para móviles medianos */
+  @media screen and (max-width: 360px) {
+    .contenido {
+      padding: 30px 8px 20px 8px;
+      gap: 20px;
+    }
+
+    .seccion-filtros {
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    h1 {
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    a.filtros-texto {
+      font-size: 0.9rem;
+      padding: 3px 6px;
+    }
+  }
+
+  /* Responsive para móviles pequeños */
+  @media screen and (max-width: 280px) {
+    .contenido {
+      padding: 25px 5px 15px 5px;
+      gap: 15px;
+    }
+
+    h1 {
+      font-size: 0.8rem;
+      letter-spacing: 0.3px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    a.filtros-texto {
+      font-size: 0.8rem;
+      padding: 2px 4px;
     }
   }
 </style>
@@ -167,5 +300,4 @@ import ExperienciaPersonal from "./PersonalExperience.astro";
     console.error("Alguno de los elementos no se encontró.");
   }
 });
-
 </script>
